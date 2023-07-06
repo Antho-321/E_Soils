@@ -12,6 +12,7 @@
 	width: 100%;
 	height:140px;
 	font-family:aubrey;
+	position: fixed;
 }
 .Header_navigation{
 	display: flex;
