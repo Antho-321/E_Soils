@@ -23,7 +23,15 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin-left: 80px;
+	padding: 6px 10px 6px 10px;
+	margin-left: 60px;
+	border-radius: 10px;
+	transition: filter 0.3s ease;
+}
+
+.Boton_nav:hover{
+	filter: invert(20%) saturate(5000%) hue-rotate(-10deg) brightness(90%) contrast(105%);
+	border-radius: 10px;
 }
 
 .img_navigation{
@@ -49,10 +57,19 @@
 
 .Boton_log{
 	padding: 7px 20px;
+	transition: background-color 0.3s ease;
+	 transition: color 0.4s ease;
+}
+.Boton_log:hover{
+	background-color: #847D7D;
+	color: #000000;
 }
 #Registrarse{
 	background-color: #324629;
 }
 /* Aqui va lo nuevo */
 
+#Registrarse:hover{
+	background-color: #478F47;
+}
 
