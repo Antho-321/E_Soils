@@ -64,6 +64,59 @@
 	background-color: #847D7D;
 	color: #000000;
 }
+
+.p1{
+	color: rgba(150, 148, 148, 1);
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	
+}
+
+.p2{
+	color: rgba(67, 66, 66, 1);
+	margin-top: 0px;
+	padding-top: 0px;
+}
+
+.Boton_iniciar{
+	background-color: rgba(210, 156, 76, 1) ;
+	border: none;
+	padding: 6px 20px;
+	color: white;
+}
+
+.Inf1{
+	margin-top: 40px;
+	margin-right: 790px;
+	margin-bottom: 60px;
+	margin-left: 60px;
+}
+
+.Inf1 h1{
+	margin-top: 0px;
+	padding-top: 0px;
+}
+
+.Inf2{
+	display: flex;
+	justify-content: flex-end;
+}
+
+.Inf2 img{
+	margin-left: 20px;
+}
+
+.Lista_ventajas li{
+	display: flex;
+}
+
+.Ventajas_icon{
+	background-color: #F6E8D4 ;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 100px;
+}
+
 #Registrarse{
 	background-color: #324629;
 }
