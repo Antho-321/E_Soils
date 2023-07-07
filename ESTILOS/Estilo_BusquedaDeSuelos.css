@@ -1,0 +1,79 @@
+/* CSS Document */
+/* Reset CSS básico */
+
+
+/*/////////////////////////*/
+
+.container {
+  width: 500px;
+  margin: 20px auto;
+  display: flex;
+	top: 500px;
+}
+
+.search-input {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  display: flex; /* añadí esto para alinear el logo y el input */
+}
+
+.logo {
+  width: 30px; /* ajusta el tamaño del logo según prefieras */
+  height: 30px;
+  margin-right: 10px; /* añade un espacio entre el logo y el input */
+}
+
+.search-button {
+  width: 20%;
+  padding: 10px;
+  border: none;
+  background-color: black; /* cambié el color a negro */
+  color: white;
+  border-radius: 0 5px 5px 0;
+}
+
+.search-button:hover {
+  background-color: gray; /* cambié el color al pasar el mouse */
+}
+
+select {
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+select:focus {
+  outline: none; /* esto quita el borde azul al hacer clic */
+}
+
+
+
+.gallery {
+  width: 800px;
+  margin: 20px auto;
+  display: flex; /* esto hace que los divs se alineen horizontalmente */
+}
+
+.image-card {
+  width: 33%; /* esto hace que cada div ocupe un tercio del ancho */
+  padding: 10px;
+}
+
+.image {
+  width: 100%; /* esto hace que la imagen ocupe todo el ancho del div */
+	height: 200px;
+	border-radius: 12px;
+}
+
+.author {
+  font-style: italic; /* esto hace que el texto del autor sea cursiva */
+}
+
+.title {
+  font-size: 24px; /* esto hace que el texto del título sea grande */
+}
+
+
