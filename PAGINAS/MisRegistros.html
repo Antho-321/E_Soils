@@ -2,10 +2,14 @@
 <html>
 <head>
 <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Documento sin título</title>
-<link href="../ESTILOS/Estilo_Index.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="../ESTILOS/Estilo_BusquedaDeSuelos.css">
+	<link rel="stylesheet" href="../ESTILOS/Estilo_MisRegistros.css">
+	<link href="../css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
 </head>
+
 <body>
 	<div class="container">
 	  <form action="/search" method="get">
@@ -21,27 +25,44 @@
 		</div>
 	  </form>
 	</div>
+	
+	
 
 	
-	<div class="gallery">
-	  <div class="image-card">
+	<div class="contenedor">
+	  <div class="imagen">
 		<img src="../IMAGENES/Gelisol.jpg" alt="Gelisol" class="image">
-		<p class="author">@Autor1</p>
-		<h2 class="title">Gelisol</h2>
+		<div class="info">
+		  <h3>Gelisol</h3>
+		  <p>@author1</p>
+		  <p>07-07-2023</p>
+		  
+		  <button type="button" class="btn btn-primary">Edit</button>
+        </div>
 	  </div>
-	  <div class="image-card">
+	  <div class="imagen">
 		<img src="../IMAGENES/Andisol.jpg" alt="Andisol" class="image">
-		<p class="author">@Autor2</p>
-		<h2 class="title">Andisol</h2>
+		<div class="info">
+		  <h3>Andisol</h3>
+		  <p>@author2</p>
+		  <p>10-07-2023</p>
+		  <button type="button" class="btn btn-primary">Edit</button>
+		</div>
 	  </div>
-	  <div class="image-card">
+	  <div class="imagen">
 		<img src="../IMAGENES/Oxisol.jpg" alt="Oxisol" class="image">
-		<p class="author">@Autor3</p>
-		<h2 class="title">Oxisol</h2>
+		<div class="info">
+		  <h3>Título 3</h3>
+		  <p>Autor 3</p>
+		  <p>Fecha 3</p>
+		  <button type="button" class="btn btn-primary">Edit</button>
+		</div>
 	  </div>
 	</div>
 	
 	
-
+	
+	
+	
 </body>
 </html>

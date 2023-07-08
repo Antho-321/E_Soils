@@ -8,19 +8,25 @@
   padding: 0;
 }
 
+body{
+	background: E8EAEE;
+}
+
 .container {
-  width: 500px;
-  margin: 20px auto;
-  display: flex;
+	width: 500px;
+	margin: 20px auto;
+	display: flex;
 	top: 500px;
+	
 }
 
 .search-input {
-  width: 80%;
+  width: 120%;
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px 0 0 5px;
-  display: flex; /* añadí esto para alinear el logo y el input */
+  display: flex;
+	
+  grid-gap: 10px;
 }
 
 .logo {
@@ -35,18 +41,30 @@
   border: none;
   background-color: black; /* cambié el color a negro */
   color: white;
-  border-radius: 0 5px 5px 0;
+  border-radius: 7px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.search-bar {
+	border-radius: 7px;
+	width: 150%;
+	
 }
 
 .search-button:hover {
   background-color: gray; /* cambié el color al pasar el mouse */
 }
 
+
+
 select {
   width: 200px;
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 7px;
+	
+  left : 10px;
 }
 
 select:focus {
@@ -80,4 +98,41 @@ select:focus {
   font-size: 24px; /* esto hace que el texto del título sea grande */
 }
 
+
+
+/* Esta es la media query para pantallas menores a 768px */
+
+@media screen and (max-width :768px) {
+
+	.container {
+		width :100%; /* esto hace que el contenedor ocupe todo el ancho de la pantalla */
+		flex-direction : column; /* esto hace que los elementos se alineen verticalmente */
+		top :100 px; /* esto reduce el espacio desde arriba */
+	}
+
+	.search-input {
+		width :100%; /* esto hace que el input ocupe todo el ancho del contenedor */
+		border-radius :5 px; /* esto redondea los bordes del input */
+	}
+
+	.search-button {
+		width :100%; /* esto hace que el botón ocupe todo el ancho del contenedor */
+		border-radius :5 px; /* esto redondea los bordes del botón */
+		margin-top :10 px; /* esto añade un espacio entre el input y el botón */
+	}
+
+	select {
+		width : 100%; /* esto hace que el select ocupe todo el ancho de la pantalla */
+		margin-top :10 px; /* esto añade un espacio entre el botón y el select */
+	}
+
+	.gallery {
+		width : 100%; /* esto hace que la galería ocupe todo el ancho de la pantalla */
+	}
+
+	.image-card {
+		width : 100%; /* esto hace que cada div ocupe todo el ancho de la pantalla */
+		height: 30px;
+	}
+}
 
