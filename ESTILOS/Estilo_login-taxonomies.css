@@ -1,0 +1,88 @@
+body{
+	display: flex;
+	margin: 0px;
+	width: 100vw;
+	height: 100vh;
+	font-family: 'Poppins', sans-serif;
+	overflow: hidden;
+}
+#left-part{
+	display: flex;
+	width: 50%;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+#right-part{
+	width: 50%;
+}
+h1{
+	text-align: center;
+	font-size: 25px;
+	margin: 0px;
+}
+#seccion_ingreso{
+	display: flex;
+	height: 40%;
+	width: 66%;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+#section_pass_forgotten{
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+}
+.main-boxes{
+	width: 310.765px;
+	height: 36.9px;
+	border-radius: 14px;
+	border-color: transparent;
+	background-color: #F0EDFF;
+	padding-left: 40px;
+}
+#submit{
+	height: 42px;
+	width: 101.6px;
+	border-radius: 14px;
+	border-color: white;
+	border-style: solid;
+	color: white;
+	background: linear-gradient(to right,rgba(145,129,244,1), rgba(80,56,237,1));
+	font-size: 15px;
+}
+#forg_pass{
+	text-decoration: none;
+	color: #525252;
+	font-weight: 1;
+}
+.icon{
+	position: absolute;
+	padding-left: 10px;
+}
+.cont_fields{
+	display: flex;
+  align-items: center;
+}
+#lock_icon{
+	padding-left: 13px !important;
+}
+.recovery{
+	height: 155px !important;
+}
+#login-database{
+	flex-direction: row-reverse;
+}
+.admin-right{
+	display: flex;
+	justify-content: flex-start !important;
+	align-items: center;
+}
+.admin-left{
+	flex-direction: row !important;
+	justify-content: flex-start !important;
+}
+.btn_recovery{
+	width: 220px !important;
+}
