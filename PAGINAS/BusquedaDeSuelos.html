@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<link href="../ESTILOS/Estilo_Index.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="../ESTILOS/Estilo_BusquedaDeSuelos.css">
+</head>
+<body>
+	<div class="container">
+	  <form action="/search" method="get">
+		<div class="search-input">
+		  <img src="../VECTORES/lupa.svg" alt="Logo" class="logo"> 
+		  <input type="text" name="q" placeholder="Búsqueda de Suelos...">
+		</div>
+		<button type="submit" class="search-button">Search</button>	  
+		  <select name="filter" id="filter">
+		  <option value="autor">Por autor</option>
+		  <option value="ubicacion">Por ubicación</option>
+		  <option value="orden">Por orden</option>
+		</select>
+
+	  </form>
+	</div>
+
+	<div class="gallery">
+	  <div class="image-card">
+		<img src="../IMAGENES/Gelisol.jpg" alt="Gelisol" class="image">
+		<p class="author">@Autor1</p>
+		<h2 class="title">Gelisol</h2>
+	  </div>
+	  <div class="image-card">
+		<img src="../IMAGENES/Andisol.jpg" alt="Andisol" class="image">
+		<p class="author">@Autor2</p>
+		<h2 class="title">Andisol</h2>
+	  </div>
+	  <div class="image-card">
+		<img src="../IMAGENES/Oxisol.jpg" alt="Oxisol" class="image">
+		<p class="author">@Autor3</p>
+		<h2 class="title">Oxisol</h2>
+	  </div>
+	</div>
+	
+	
+	
+
+	
+</body>
+</html>
