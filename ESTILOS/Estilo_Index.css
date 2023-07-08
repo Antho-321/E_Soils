@@ -11,7 +11,7 @@
 	z-index: 100;
 	background-color: #090505;
 	width: 100%;
-	height: 140px;
+	height: 99px;
 	font-family:aubrey;
 	position: fixed;
 	display: flex;
@@ -45,6 +45,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	padding-top: 10px;
 }
 .Logo{
 	margin-left: 50px;
@@ -83,11 +84,16 @@
 	border: none;
 	padding: 6px 20px;
 	color: white;
+	transition: background-color 0.3s ease;
+}
+
+.Boton_iniciar:hover{
+	background-color: gray;
 }
 
 .Inf1{
 	margin-top: 40px;
-	margin-right: 790px;
+	margin-right: 80px;
 	margin-bottom: 60px;
 	margin-left: 60px;
 }
@@ -110,11 +116,167 @@
 	display: flex;
 }
 
+
 .Ventajas_icon{
 	background-color: #F6E8D4 ;
 	padding: 10px;
 	margin: 10px;
 	border-radius: 100px;
+}
+
+.Ventajas1{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 40px;
+}
+
+.Lista_ventajas{
+	margin-left: 80px;
+}
+.Titulo{
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	margin-top: 70px; 
+	margin-right: 200px ;
+	margin-left: 200px;
+}
+
+.Ultimos_Registros{
+	background-color: #5E7061;
+}
+
+.Seccion_reg{
+	background-image: url("../IMAGENES/Fondo.png");
+}
+
+.Imagen_registro{
+	width: 250px;
+	height: 250px;
+}
+.Encabezado{
+	width: 250px;
+	margin-right: 60px;
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	text-align: center;
+	color: white;
+}
+.Texto_registro{
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	width: 250px;
+	padding: 20px;
+	background-color: #5A4D39;
+	color: white;
+	
+}
+
+.Registro_suelo{
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	margin-top: 30px;
+}
+
+.Registros_bdd{
+	display: block;
+	margin-top: 20px;
+	padding-bottom: 60px;
+}
+
+.Marca{
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+.Brand{
+	width: 100%;
+	display: grid;
+	justify-content: center;
+	align-content: center;
+}
+.Brand img{
+	width: 168.32px;
+	height: 165px;
+}
+.Eslogan{
+	display: grid;
+	justify-content: center;
+	align-content: center;
+}
+.Footer{
+	padding: 30px 30px 10px 30px;
+	background-color: #242430;
+	color: white;
+}
+.Antes_linea{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.About{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 6px 10px 6px 10px;
+	margin-left: 150px;
+	border-radius: 10px;
+	transition: filter 0.3s ease;
+	transition: color 0.6s ease;
+	margin-right: 100px;
+}
+
+.About:hover{
+	color: black;
+	filter: invert(80%) saturate(5000%) hue-rotate(-10deg) brightness(90%) contrast(105%);
+	border-radius: 10px;
+	
+}
+
+.F1{
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	
+}
+
+.Follow{
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+.Social{
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+}
+.Redes{
+	margin-right: 200px;
+}
+
+.Copy{
+	margin-left: 100px;
+}
+.Link:Hover{
+	color: gray;
+}
+
+.Social img:Hover{
+	filter: invert(30%) saturate(5000%) hue-rotate(-10deg) brightness(90%) contrast(105%);
+}
+.Linea{
+	border-top: solid 1px gray;
+	margin: 20px 100px; 
+}
+#Titulo2{
+	padding-top: 50px;
 }
 
 #Registrarse{
