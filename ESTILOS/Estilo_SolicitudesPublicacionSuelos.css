@@ -1,0 +1,78 @@
+/* CSS Document */
+body{
+	background: #E8EAEE;
+}
+
+.title{
+	display: flex;
+	justify-content: center;
+}
+
+.todo{
+	display: flex;
+	justify-content: space-between;
+	margin: 25px;
+	background: white;
+	border-radius: 0 0 10px 10px;
+	
+}
+.photos{
+	margin-bottom: 30px;
+	margin-top: 30px;
+	margin-left: 15px;
+	margin-right: 30px;
+}
+.photos img{
+	border-radius: 10px;
+	margin: 10px;
+}
+
+.titleauthor h4{
+	color: grey;
+}
+
+/*botones*/
+.css-boton {
+  display: inline-block;
+  background-color: #E6E6E6;
+  padding: .5em 1em;
+  color: #444;
+  font-family: inherit;
+  font-size: 100%;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 6px;
+  margin-right: 5px;
+	border: none;
+	width:30%;
+}
+.acept{
+	background: #267800;
+	color: aliceblue;
+}
+.acept:hover{
+	background: #4AC849;
+}
+.decline{
+	background: #780000;
+	color: aliceblue;
+}
+.decline:hover{
+	background: #C43335;
+}
+.view{
+	margin-top: 10px;
+	background: #3431B7;
+	color: aliceblue;
+}
+.view:hover{
+	background: #3653DC;
+}
+.divbotones1{
+	display: flex;
+	justify-content: center;
+}
+.divbotones2{
+	display: flex;
+	justify-content: center;
+}
