@@ -3,7 +3,9 @@
 body{
 	background-color: #E8EAEE;
 }
-
+.menu, .Boton_log{
+	font-family: 'Poppins', sans-serif;
+}
 .Data{
 	padding-top: 130px;
 }
@@ -71,4 +73,28 @@ body{
 .submit:hover{
 	background-color: gray;
 	transition: background-color 0.5s ease;
+}
+.tipo_preview_soil{
+	text-align: center !important;
+}
+.steps_preview_soil{
+	margin: 0px !important;
+}
+.font_preview_soil{
+	font-family: 'Aleo', serif;
+	font-size: 20px;
+}
+#prev_img{
+	border-radius: 20%;
+}
+#sel_img_prev_soil{
+	position: absolute;
+	font-family: 'Archivo', sans-serif;
+	color: white;
+	font-weight: 1;
+}
+#cont_preview_soil{
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }

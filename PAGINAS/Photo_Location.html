@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key= AoOD7rLpof2UOkBduy8To8wNaH_TNPTkLRIZxwzGB4XCBwO4l9DIqzT-vJ4_jn7X' async defer></script>
+<title>Register</title>
+<link href="../ESTILOS/Estilo_Index.css" rel="stylesheet" type="text/css">
+<link href="../ESTILOS/Estilo_Formularios.css" rel="stylesheet" type="text/css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aleo:wght@700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@100&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header class="Header" >
+		<img src="../IMAGENES/Logo.png" width="168.32" height="154" alt="Logo ESoils" class="Logo"/>
+		<ul class="menu" >
+		  <li class="Boton_nav" ><img src="../VECTORES/Ícono_home.svg" width="58" height="50" alt="" class="img_navigation"/>HOME</li>
+		  <li class="Boton_nav" ><img src="../VECTORES/registration.svg" width="46" height="50" alt="Registros" class="img_navigation"/>  MY REGISTERS</li>
+		  <li class="Boton_nav" ><img src="../VECTORES/imagen_2023-06-29_105553808.svg" width="50" height="50" alt="Búsqueda" class="img_navigation">SEARCH</li>
+		</ul>
+		<div class="Header_loguear">
+				  <div class="log">
+					<div class="Boton_log"> LOG IN<strong>&nbsp; </strong></div>
+		  </div>
+				  <div class="Log">
+					<div class="Boton_log" id="Registrarse"> SIGN IN </div>
+		  </div>
+      </div>
+	</header>
+<section class="Data">
+  <h1 class="Titulo_propiedades font_preview_soil">Preview of soil</h1>
+	<form action="">
+	<div class="Steps steps_preview_soil">
+		<ul class="Tipo tipo_preview_soil">
+			<li id="cont_preview_soil">
+				<p id="sel_img_prev_soil">Seleccionar imagen</p>
+				<img src="../IMAGENES/Example_Soil.png" width="240" alt="" id="prev_img"/>
+			
+			</li>
+			<li><strong class="font_preview_soil">Location</strong></li>
+			<li><div id="myMap" style="width:600px;height:400px;"></div>
+			</li>
+		</ul>
+    </div>
+	<div class="Botones_sumbit">
+		  <button class="submit">← Previus</button>
+		  <button class="submit">Next →</button>
+		</div>
+	</form>
+</section>
+</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script  type="text/javascript" src="../js/script_Maps.js"></script>
+	
+</html>
