@@ -6,93 +6,85 @@
 	<link rel="stylesheet" href="../ESTILOS/Estilo_EditProfile.css">
 </head>
 
-<body>
-	<div class="wrapper">
+<body id="idbody">
+
 	  <div class="profile">
 		<div class="content">
-		  <h1><strong>Edit Profile</strong></h1>
+			
+		  	<div class="text">
+				<h1 class="titulo"><strong>Edit Profile</strong></h1>
+		 		<h2 class="titulo"> Profile Photo</h2>
+			</div>
 		  <form action="">
-			<!-- Photo -->
-			<fieldset>
-			  <div class="grid-35">
-				<label for="avatar">Your Photo</label>
+			  <div class="classimage">
+			  	<img src="../images/Profile Photo.png" alt="Profile Photo">
+			  	
 			  </div>
-			  <div class="grid-65">
-				<span class="photo" title="Upload your Avatar!"></span>
-				<input type="file" class="btn" />
+			  		 
+			  <div class="uploadbuton">
+			  	  <label for="file-upload" class="custom-file-upload">
+				  <span>Upload Photo</span>
+				  </label>
+				  <input id="file-upload" class="file" type="file" name="ProfilePhoto" accept="image/*">
 			  </div>
-			</fieldset>
-			  
-			<fieldset>
-			  <div class="grid-35">
-				<label for="fname">Identification Document</label>
-			  </div>
-			  <div class="grid-65">
-				<input type="text" id="identificationDocument" disabled="true" placeholder="1002003000" />
-			  </div>
-			</fieldset>
-			  
-			<!-- Email -->
-			<fieldset>
-			  <div class="grid-35">
-				<label for="email">Email Address</label>
-			  </div>
-			  <div class="grid-65">
-				<input type="email" id="email" disabled="true" placeholder="example@example.com"  />
-			  </div>
-			</fieldset>
-			  
-			  
-			<fieldset>
-			  <div class="grid-35">
-				<label for="fname">New First Name</label>
-			  </div>
-			  <div class="grid-65">
-				<input type="text" id="fname" placeholder="First Name" />
-			  </div>
-			</fieldset>
-			  
-			<fieldset>
-			  <div class="grid-35">
-				<label for="lname">New Last Name</label>
-			  </div>
-			  <div class="grid-65">
-				<input type="text" id="lname" placeholder="Last Name"/>
-			  </div>
-			</fieldset>
-			
-					
-			<!-- Password -->
-			<fieldset>
-			  <div class="grid-35">
-				<label for="company">New Password</label>
-			  </div>
-			  <div class="grid-65">
-				<input type="password" id="NewPassword"/>
-			  </div>
-			</fieldset>
-			  
-			  
-			<!-- Password -->
-			<fieldset>
-			  <div class="grid-35">
-				<label for="company">Repeat New Password</label>
-			  </div>
-			  <div class="grid-65">
-				<input type="password" id="RepeatNewPassword"/>
-			  </div>
-			</fieldset>
-			  
-			
-			<fieldset>
-			  <input type="button" class="Btn cancel" value="Cancel" />
-			  <input type="submit" class="Btn" value="Save Changes" />
-			</fieldset>
 
+			  <div class="classul">
+			  	<ul class="ul1">
+					<li>
+						<label for="DocumenIdentification">Document Identification</label>
+
+					</li> 
+					 <li>
+						<label for="Email">Email</label>
+					 </li>
+					 <li>
+						<label for="newname">New Name</label>
+					 </li>
+					 <li>
+						<label for="newlastname">New Last Name</label>
+					 </li>
+					 <li>
+						<label for="password">New Password</label>
+					 </li>
+					 <li>
+						<label for="rpassword">Repeat New Password</label>
+
+					 </li>
+				  </ul>
+
+				  <ul class="ul2">
+					  <li>
+						  
+						<div class="noeditables">
+						  <label  for="DI">1002003000</label>
+						  <label for="Email">example@example.com</label>
+						</div>
+					</li> 
+
+					 <li>
+						<input type="text" name="name" placeholder="Jorge Rafael">					
+					 </li>
+					 <li>
+						 <input type="text" name="lname" placeholder="Rosero">		
+					 </li>
+					 <li>
+						<input type="password" name="password">
+					 </li>
+					 <li>
+						 <input type="password" name="npassword">
+					 </li>
+				  </ul>
+			  </div>
+			  
+			  <div class="botones">
+				  <a class="css-boton cancelar" href="#">Cancel</a>
+				  <input class = "css-boton save" type="submit" value="Save Changes">
+				  
+			  </div>
+			  
 		  </form>
 		</div>
 	  </div>
-	</div>
 
 
 </body>
