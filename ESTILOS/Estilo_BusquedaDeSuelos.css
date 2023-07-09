@@ -3,30 +3,27 @@
 
 
 /*/////////////////////////*/
-*{
-	margin: 0;
-  padding: 0;
-}
+
 
 body{
 	background: #E8EAEE;
 }
-
 .container {
-	width: 500px;
-	margin: 20px auto;
-	display: flex;
-	top: 500px;
-	
+	padding-top: 130px;
+	width:100%;
+	padding-right: 100px;
+	padding-left: 100px;
 }
 
+
+
 .search-input {
-  width: 120%;
+  width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
-  display: flex;
-	
+  display: flex;	
   grid-gap: 10px;
+	background-color: white;
 }
 
 .logo {
@@ -74,9 +71,11 @@ select:focus {
 
 
 .gallery {
-  width: 800px;
+  width: 85%;
   margin: 20px auto;
   display: flex; /* esto hace que los divs se alineen horizontalmente */
+	background-color: white;
+	justify-content: space-between;
 }
 
 .image-card {
