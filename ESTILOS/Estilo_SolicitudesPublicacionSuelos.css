@@ -4,8 +4,11 @@ body{
 }
 
 .title{
+	position: relative;
+	top: 110px;
 	display: flex;
 	justify-content: center;
+	margin-bottom: 130px;
 }
 
 .todo{
@@ -76,3 +79,4 @@ body{
 	display: flex;
 	justify-content: center;
 }
+
