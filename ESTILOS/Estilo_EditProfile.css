@@ -18,7 +18,7 @@ img{
 .ul1 li{
 	display: grid;
 	justify-content: flex-end;
-	margin-top: 10px;
+	margin-top: 12px;
 	margin-bottom: 10px;
 }
 .ul1{
@@ -26,12 +26,13 @@ img{
 }
 .ul2 li{
 	position: relative;
-	margin: 1px;
-	top: 13px;
+	margin-top: 8px;
+	top: 10px;
 }
 .ul2 li input{
 	border-radius: 10px;
 	padding: 5px;
+	border: none;
 }
 
 .noeditables{
@@ -69,13 +70,19 @@ ul{
 .cancelar{
 	color: aliceblue;
 	background: rgb(202, 60, 60);
+	width: 7%;
 }
-
 .save{
 	color: aliceblue;
 	background: black;
+	border: none;
 }
-
+.cancelar:hover{
+	background: red;
+}
+.save:hover{
+	background: #372F2F;
+}
 .botones{
 	display: flex;
 	justify-content: center;
@@ -104,7 +111,9 @@ ul{
   border-radius: 4px;
 	color: white;
 }
-
+.custom-file-upload:hover{
+	background-color: green;
+}
 .custom-file-upload span {
   font-size: 14px;
 }
