@@ -1,0 +1,74 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	background-color: #E8EAEE;
+}
+
+.Data{
+	padding-top: 130px;
+}
+.Titulo_propiedades{
+	text-align: center;
+	font-size: 40px;
+}
+.Tipo{
+	display: grid;
+	text-align: end;
+	padding: 5px;
+}
+.Values{
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	margin-left: 20px;
+	padding-right: 20px;
+}
+.Values li{
+	display: grid;
+	justify-content: center;
+	align-items: center;
+}
+.Descripcion{
+	display: grid;
+	justify-content: center;
+	padding: 5px;
+}
+.Steps{
+	display: flex;
+	justify-content: center;
+	margin-top: 30px;
+	font-size: 20px;
+}
+.valores{
+	width: 100px;
+	border: solid 0px;
+	background-color: #F2F4F8;
+	border-radius: 12px;
+	color: gray;
+	text-align: center;
+	padding: 10px 10px;
+}
+.Steps li{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.Botones_sumbit{
+	display: flex;
+	justify-content: space-between;
+	padding: 0px 60px;
+}
+.submit{
+	color: white;
+	border: none;
+	background-color: black;
+	padding: 15px 10px;
+	font-size: 18px;
+	width: 145px;
+	border-radius: 12px;
+	
+}
+
+.submit:hover{
+	background-color: gray;
+	transition: background-color 0.5s ease;
+}
