@@ -1,3 +1,10 @@
+var files = document.getElementById("files");
+files.addEventListener("change", function() {
+  // get the file name
+  var name = files.value.split("\\").pop();
+  // display the file name
+	alert(name);
+});
 function GetMap() {
     var map = new Microsoft.Maps.Map('#myMap', {
         credentials: 'AoOD7rLpof2UOkBduy8To8wNaH_TNPTkLRIZxwzGB4XCBwO4l9DIqzT-vJ4_jn7X'
