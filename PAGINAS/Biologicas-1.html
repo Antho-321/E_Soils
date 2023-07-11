@@ -29,9 +29,9 @@
   </div>
 </header>
 <section class="Data">
-  <h1 class="Titulo_propiedades">Biological properties</h1>
-  <div id="nav_steps"> <a href="#" class="dot">1</a> <a href="#" class="line"></a> <a href="#" class="line bg_wh"></a> <a href="#" class="dot bg_wh">2</a> <a href="#" class="line bg_wh"></a> <a href="#" class="line bg_wh"></a> <a href="#" class="dot bg_wh">3</a> <a href="#" class="line bg_wh"></a> <a href="#" class="line bg_wh"></a> <a href="#" class="dot bg_wh">4</a> </div>
   <form action="">
+	  <h1 class="Titulo_propiedades">Biological properties</h1>
+	  <div class="form-step form-step-active">
     <div class="contenedor_form">
       <table>
         <tr>
@@ -61,6 +61,124 @@
       <button class="submit">← Previus</button>
       <button class="submit">Next →</button>
     </div>
+		  </div>
+	  <div class="form-step">
+    <div class="contenedor_form">
+      <table>
+        <tr>
+          <th class="subtitles">Microbial activity</th>
+          <th colspan="2"></th>
+        </tr>
+        <tr>
+          <th>Type of microbial activity</th>
+          <td colspan="2"><input type="text" class="valores txt_value_biological_2" placeholder="(Worms, nematodes, etc.)"></td>
+        </tr>
+        <tr>
+          <th class="td_top">Intensity of activity</th>
+          <td colspan="2"><div class="select_box">
+              <select name="" id="">
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+              </select>
+            </div></td>
+        </tr>
+		  <tr>
+          <th class="td_top">Additional remarks</th>
+          <td colspan="2"><textarea class="valores txtarea_biological" placeholder="(“A strong smell of decomposition and presence of mycelium in the soil was observed”)."></textarea></td>
+        </tr>
+		  <tr>
+          <th class="subtitles">Microbial biomass</th>
+          <th colspan="2"></th>
+        </tr>
+		  <tr>
+          <th class="td_top">Measurement method</th>
+          <td colspan="2"><div>
+              <select name="" id="" class="select_box">
+                <option value="Total organic carbon method">Total organic carbon method</option>
+                <option value="Chlorophyll a method">Chlorophyll a method</option>
+                <option value="Microbial phosphorus method">Microbial phosphorus method</option>
+				<option value="Microbial nitrogen method">Microbial nitrogen method</option>
+              </select>
+            </div></td>
+        </tr>
+		  <tr>
+          <th class="td_top">Measurement results</th>
+          <td><input type="number" class="valores"><b id="unit_measure">mg/g soil</b></td>
+        </tr>
+		  <tr>
+          <th class="td_top">Additional remarks</th>
+          <td colspan="2"><textarea class="valores txtarea_biological" placeholder="(“Values indicate moderate microbial biomass in the soil.”)."></textarea></td>
+        </tr>
+      </table>
+    </div>
+    <div class="Botones_sumbit">
+      <button class="submit">← Previus</button>
+      <button class="submit">Next →</button>
+    </div>
+		  </div>
+	  <div class="form-step">
+    	<div class="contenedor_form">
+      <table>
+        <tr>
+          <th class="subtitles">Macroinvertebrates</th>
+          <th colspan="4"></th>
+        </tr>
+        <tr>
+          <th>Types of macroinvertebrates</th>
+          <td><input type="text" class="valores txt_value_biological" placeholder="(Beetles, mealybugs, etc.)"></td>
+          <th>Quantity</th>
+          <td><input type="number" class="valores"></td>
+          <td><button class="submit btn_añadir">Add</button></td>
+        </tr>
+        <tr>
+          <th class="td_top">Additional remarks</th>
+          <td colspan="3"><textarea class="valores txtarea_biological" placeholder="(“Macroinvertebrates were mostly found on the surface....”)"></textarea></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th></th>
+          <th colspan="3"><textarea class="valores txtarea_biological bg_wh_txt"></textarea></th>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="Botones_sumbit">
+      <button class="submit">← Previus</button>
+      <button class="submit">Next →</button>
+    </div>
+		  </div>
+	  <div class="form-step">
+    	<div class="contenedor_form">
+      <table>
+        <tr>
+          <th class="subtitles">Roots</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>Average depth</th>
+          <td><input type="number" class="valores"><b id="unit_measure">cm</b></td>
+        </tr>
+        <tr>
+          <th class="td_top">Measurement method</th>
+          <td><select name="" id="" class="sel_bio">
+                <option value="Estado 0 (Sin raíces visibles)">Status 0 (No visible roots)</option>
+                <option value="Estado 1 (Raíces individuales)">State 1 (Individual roots)</option>
+                <option value="Estado 2 (Raíces finas)">Stage 2 (Fine roots)</option>
+			  <option value="Estado 3 (Raíces densas)">State 3 (Dense roots)</option>
+              </select></td>
+        </tr>
+        <tr>
+          <th class="td_top">Additional remarks</th>
+          <td><textarea class="valores txtarea_biological step4_bio" placeholder="(“Values indicate moderate microbial biomass in the soil.”)."></textarea></td>
+        </tr>
+      </table>
+    </div>
+    <div class="Botones_sumbit">
+      <button class="submit">← Previus</button>
+      <button class="submit">Next →</button>
+    </div>
+	</div>
   </form>
 </section>
 </body>
