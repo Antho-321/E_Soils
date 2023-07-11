@@ -32,6 +32,7 @@
 .Boton_nav:hover{
 	filter: invert(20%) saturate(5000%) hue-rotate(-10deg) brightness(90%) contrast(105%);
 	border-radius: 10px;
+	cursor: pointer;
 }
 
 .img_navigation{
@@ -64,6 +65,7 @@
 .Boton_log:hover{
 	background-color: #847D7D;
 	color: #000000;
+	cursor: pointer;
 }
 
 .p1{
@@ -89,6 +91,7 @@
 
 .Boton_iniciar:hover{
 	background-color: gray;
+	cursor: pointer;
 }
 
 .Inf1{
@@ -237,7 +240,7 @@
 	color: black;
 	filter: invert(80%) saturate(5000%) hue-rotate(-10deg) brightness(90%) contrast(105%);
 	border-radius: 10px;
-	
+	cursor: pointer;
 }
 
 .F1{
@@ -266,10 +269,12 @@
 }
 .Link:Hover{
 	color: gray;
+	cursor: pointer;
 }
 
 .Social img:Hover{
 	filter: invert(30%) saturate(5000%) hue-rotate(-10deg) brightness(90%) contrast(105%);
+	cursor: pointer;
 }
 .Linea{
 	border-top: solid 1px gray;
@@ -286,5 +291,6 @@
 
 #Registrarse:hover{
 	background-color: #478F47;
+	cursor: pointer;
 }
 
