@@ -1,4 +1,4 @@
-@charset "utf-8";
+My recordsMy records@charset "utf-8";
 /* CSS Document */
 body{
 	background-color: #E8EAEE;
@@ -204,7 +204,7 @@ select {
   appearance: none; /* Remove default arrow */
   -moz-appearance: none; /* Firefox */
   -webkit-appearance: none; /* Safari and Chrome */
-  background-image: url("../IMAGENES/png-transparent-chevron-circle-down-solid-icon.png"); /* Add custom arrow image */
+  background-image: url("../IMAGENES/Icono_select.png"); /* Add custom arrow image */
   background-repeat: no-repeat;
   background-position: right center;
 	width: 120px;
