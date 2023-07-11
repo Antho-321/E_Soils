@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Register</title>
+<link href="../ESTILOS/Estilo_Index.css" rel="stylesheet" type="text/css">
+<link href="../ESTILOS/Estilo_Formularios.css" rel="stylesheet" type="text/css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Aleo:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@100&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header class="Header" > <img src="../IMAGENES/Logo.png" width="168.32" height="154" alt="Logo ESoils" class="Logo"/>
+  <ul class="menu" >
+    <li class="Boton_nav" ><img src="../VECTORES/Ícono_home.svg" width="58" height="50" alt="" class="img_navigation"/>HOME</li>
+    <li class="Boton_nav" ><img src="../VECTORES/registration.svg" width="46" height="50" alt="Registros" class="img_navigation"/> MY REGISTERS</li>
+    <li class="Boton_nav" ><img src="../VECTORES/imagen_2023-06-29_105553808.svg" width="50" height="50" alt="Búsqueda" class="img_navigation">SEARCH</li>
+  </ul>
+  <div class="Header_loguear">
+    <div class="log">
+      <div class="Boton_log">LOG IN<strong>&nbsp; </strong></div>
+    </div>
+    <div class="Log">
+      <div class="Boton_log" id="Registrarse">SIGN IN</div>
+    </div>
+  </div>
+</header>
+<section class="Data">
+  <h1 class="Titulo_propiedades">Biological properties</h1>
+  <div id="nav_steps"> 
+	  <a href="Biologicas-1.html" class="dot bg_wh">1</a> 
+	  <a href="#" class="line bg_wh"></a> 
+	  <a href="#" class="line"></a> 
+	  <a href="#" class="dot">2</a> 
+	  <a href="#" class="line"></a> 
+	  <a href="#" class="line bg_wh"></a> 
+	  <a href="#" class="dot bg_wh">3</a> 
+	  <a href="#" class="line bg_wh"></a> 
+	  <a href="#" class="line bg_wh"></a> 
+	  <a href="#" class="dot bg_wh">4</a> 
+	</div>
+  <form action="">
+    <div class="contenedor_form">
+      <table>
+        <tr>
+          <th class="subtitles">Microbial activity</th>
+          <th colspan="2"></th>
+        </tr>
+        <tr>
+          <th>Type of microbial activity</th>
+          <td colspan="2"><input type="text" class="valores txt_value_biological_2" placeholder="(Worms, nematodes, etc.)"></td>
+        </tr>
+        <tr>
+          <th class="td_top">Intensity of activity</th>
+          <td colspan="2"><div class="select_box">
+              <select name="" id="">
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+              </select>
+            </div></td>
+        </tr>
+		  <tr>
+          <th class="td_top">Additional remarks</th>
+          <td colspan="2"><textarea class="valores txtarea_biological" placeholder="(“A strong smell of decomposition and presence of mycelium in the soil was observed”)."></textarea></td>
+        </tr>
+		  <tr>
+          <th class="subtitles">Microbial biomass</th>
+          <th colspan="2"></th>
+        </tr>
+		  <tr>
+          <th class="td_top">Measurement method</th>
+          <td colspan="2"><div>
+              <select name="" id="" class="select_box">
+                <option value="Total organic carbon method">Total organic carbon method</option>
+                <option value="Chlorophyll a method">Chlorophyll a method</option>
+                <option value="Microbial phosphorus method">Microbial phosphorus method</option>
+				<option value="Microbial nitrogen method">Microbial nitrogen method</option>
+              </select>
+            </div></td>
+        </tr>
+		  <tr>
+          <th class="td_top">Measurement results</th>
+          <td><input type="number" class="valores"><b id="unit_measure">mg/g soil</b></td>
+        </tr>
+		  <tr>
+          <th class="td_top">Additional remarks</th>
+          <td colspan="2"><textarea class="valores txtarea_biological" placeholder="(“Values indicate moderate microbial biomass in the soil.”)."></textarea></td>
+        </tr>
+      </table>
+    </div>
+    <div class="Botones_sumbit">
+      <button class="submit">← Previus</button>
+      <button class="submit">Next →</button>
+    </div>
+  </form>
+</section>
+</body>
+</html>
