@@ -32,7 +32,7 @@ header+*, button, input, textarea, select{
 	align-items: center;
 	flex-direction: column;
 }
-h1{
+h1:not(.Titulo_propiedades){
 	padding-bottom: 50px;
 }
 .btn_op_reg{
@@ -51,4 +51,36 @@ font-size: 15px;
 font-style: normal;
 font-weight: 700;
 line-height: normal;
+}
+.cont_txt{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+p{
+	text-align: justify;
+}
+.about, p{
+	font-family: Poppins;
+}
+.about{
+	padding: 20px 0px;
+}
+.img_about{
+	border-radius: 25%;
+}
+.about_cont{
+	flex-direction: row-reverse;
+}
+.img_left{
+	padding-left: 35px;
+}
+.img_right{
+	padding-right: 35px;
+}
+.data_about{
+	height: auto;
+}
+.cont_img_about{
+	padding-bottom: 20px;
 }
