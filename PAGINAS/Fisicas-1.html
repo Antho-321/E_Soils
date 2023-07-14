@@ -12,6 +12,7 @@
 <header class="Header" >
 		<img src="../IMAGENES/Logo.png" width="168.32" height="154" alt="Logo ESoils" class="Logo"/>
 		<ul class="menu" >
+<<<<<<< HEAD
 	  <div id="cont_menu">
 		<li class="Boton_nav" ><img src="../VECTORES/Ícono_home.svg" width="58" height="50" alt="" class="img_navigation"/>HOME</li>
     <li class="Boton_nav" ><img src="../VECTORES/registration.svg" width="46" height="50" alt="Registros" class="img_navigation"/> MY REGISTERS</li>
@@ -25,15 +26,22 @@
 		  </div>
 				  <div class="Log" onclick= "signin()">
 					<div class="Boton_log" id="Registrarse"><strong> SIGN IN </strong> </div>
+=======
+		  <li class="Boton_nav" onclick= "home()"><img src="../VECTORES/Ícono_home.svg" width="58" height="50" alt="" class="img_navigation"/>HOME</li>
+		  <li class="Boton_nav" onclick= "mis_registros()"><img src="../VECTORES/registration.svg" width="46" height="50" alt="Registros" class="img_navigation"/>  MY REGISTERS</li>
+		  <li class="Boton_nav" onclick= "busqueda()"><img src="../VECTORES/imagen_2023-06-29_105553808.svg" width="50" height="50" alt="Búsqueda" class="img_navigation">SEARCH</li>
+		</ul>
+		<div class="Header_loguear">
+				  <div class="log">
+					<div class="Boton_log"> LOG IN<strong>&nbsp; </strong></div>
+		  </div>
+				  <div class="Log">
+					<div class="Boton_log" id="Registrarse"> SIGN IN </div>
+>>>>>>> origin/main
 		  </div>
       </div>
 	</header>
-<section class="Data">
-	
-	
-	
-	
-	
+<section class="Data">	
 	<form action="#" class="form">
 	  <h1 class="Titulo_propiedades">Physical properties</h1>
 	  <div class="form-step form-step-active">
@@ -217,7 +225,6 @@
 			 
 		<div class="Steps">
 		<ul class="Tipo">
-			<li><strong>Compressive strength</strong></li>
 			<li><strong>Porosity</strong></li>
 			<li><strong>Initial moisture</strong></li>
 			<li><strong>Earring</strong></li>
@@ -233,11 +240,9 @@
 			<li><input type="" class="valores"  placeholder="0.00"></li>
 			<li><input type="" class="valores"  placeholder="0.00"></li>
 			<li><input type="" class="valores"  placeholder="0.00"></li>
-			<li><input type="" class="valores"  placeholder="0.00"></li>
 		</ul>
 		
 		<ul class="Descripcion">
-			<li><strong>Kg/cm^2</strong></li>
 			<li><strong>%</strong></li>
 			<li><strong>%</strong></li>
 			<li><strong>%</strong></li>
@@ -256,4 +261,5 @@
 	
 </body>
 	<script src="../js/fisicas.js"></script>
+	<script src="../js/Interaccion_Paginas.js"></script>
 </html>

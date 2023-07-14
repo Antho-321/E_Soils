@@ -19,4 +19,12 @@ function signin() {
     window.open("Sign-up-1.html", "_blank");  
 }
 
+function myregisters() {
+    window.location.href = "MisRegistros.html";
+}
+
+function nuevoregistro() {
+    window.location.href = "Photo_Location.html";
+}
+
 
