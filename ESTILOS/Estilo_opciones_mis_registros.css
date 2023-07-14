@@ -12,14 +12,12 @@ body{
 .Titulo_propiedades{
 	text-align: center;
 	font-size: 30px;
+	padding-bottom: 30px;
 }
 header+*, button, input, textarea, select{
 	font-family: 'Aleo', serif;
 }
-.menu, .Boton_log{
-	font-family: 'Poppins', sans-serif;
-}
-#sec_img{
+.sec_img{
 	display: flex;
 	justify-content: space-between;
 	width: 850px;
@@ -83,4 +81,38 @@ p{
 }
 .cont_img_about{
 	padding-bottom: 20px;
+}
+#check{
+	display: none;
+}
+#check, .desplegar_menu{
+	z-index: 2;
+}
+.header_login{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+#op_menu_desplegable{	
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	visibility: hidden;
+}
+#cont_op_despl, #op_menu_desplegable{
+	width: 120px;
+}
+.Elem_menu_desplegadble{
+	/*width: 80px;*/
+}
+.desplegar_menu{
+	width: 70px;
+	padding: 12px 0px;
+	margin: 0px calc((120px - 70px) / 2);
+}
+#check:checked + label + div>div{
+	visibility: visible;
+}
+.img_login{
+	cursor: pointer;
 }

@@ -18,13 +18,15 @@
 	justify-content: space-between;
 	align-items: center;
 }
+.menu, .Boton_log{
+	font-family: 'Poppins', sans-serif;
+}
 .Boton_nav{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	padding: 6px 10px 6px 10px;
-	margin-left: 60px;
 	border-radius: 10px;
 	transition: filter 0.3s ease;
 }
@@ -43,6 +45,8 @@
 	color: white;
 }
 .menu{
+	width: 100%;
+	position: absolute;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -293,4 +297,8 @@
 	background-color: #478F47;
 	cursor: pointer;
 }
-
+#cont_menu{
+	display: flex;
+	width: 400px;
+	justify-content: space-between;
+}
