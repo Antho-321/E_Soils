@@ -51,17 +51,10 @@ export const postFisicas = async (req, res) =>
     try {
         const {
         apparent_density, real_density, relative_density, maximum_dry_density,compressive_strength,
-        thermal_conductivity,liquid,plastic,silt,clay,
-        gravel,sand,optimum_moisture_content,plasticity_index,gran_size,
-        water_content,
-        color,
-        tensile_strength,
-        porosity,
-        initial_moisture,
-        earring,
-        ground_altitude,
-        average_temperature,
-        rainfall_regime
+        thermal_conductivity, liquid, plastic, silt, clay,
+        gravel, sand, optimum_moisture_content, plasticity_index, gran_size,
+        water_content, color, tensile_strength, porosity, initial_moisture,
+        earring, ground_altitude, average_temperature, rainfall_regime
         } = req.body;
 
         // Parsear los valores a float
