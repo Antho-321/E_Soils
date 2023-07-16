@@ -29,8 +29,8 @@
       </div>
 	</header>
 <section class="Data">	
-	<form action="#" class="form">
-	  <h1 class="Titulo_propiedades">Physical properties</h1>
+	<form action="http://localhost:3000/postFisicas" class="form" method="post">
+	  <h1 class="Titulo_propiedades">Physical Properties</h1>
 	  <div class="form-step form-step-active">
 		  <!-- Progress bar 1-->
 			<div class="nav_steps"> 
@@ -59,12 +59,12 @@
 	  	</ul>
 		
 		<ul class="Values">
-			<li><input type="" class="valores"  placeholder="0.00"></li>
-			<li><input type="" class="valores"  placeholder="0.00"></li>
-			<li><input type="" class="valores"  placeholder="0.00"></li>
-			<li><input type="" class="valores"  placeholder="0.00"></li>
-			<li><input type="" class="valores"  placeholder="0.00"></li>
-			<li><input type="" class="valores"  placeholder="0.00"></li>
+			<li><input name="apparent_density" type="number" class="valores"  placeholder="0.00"></li>
+			<li><input name="real_density" type="number" class="valores"  placeholder="0.00"></li>
+			<li><input name="relative_density" type="number" class="valores"  placeholder="0.00"></li>
+			<li><input name="maximum_dry_density" type="number" class="valores"  placeholder="0.00"></li>
+			<li><input name="compressive_strength" type="number" class="valores"  placeholder="0.00"></li>
+			<li><input name="thermal_conductivity" type="number" class="valores"  placeholder="0.00"></li>
 		</ul>
 		
 		<ul class="Descripcion">
@@ -113,13 +113,13 @@
 		
 		<ul class="Values">
 			<li><strong>Atterberg limits</strong></li>
-			<li><input type="" class="valores"  placeholder="0.00"></li>
-			<li><input type="" class="valores"  placeholder="0.00"></li>
+			<li><input name="liquid" type="number" class="valores"  placeholder="0.00"></li>
+			<li><input name="plastic" type="number" class="valores"  placeholder="0.00"></li>
 			<li><strong>Granulometric distribution</strong></li>
-			<li><input type="" class="valores"  placeholder="0.00"></li>
-			<li><input type="" class="valores"  placeholder="0.00"></li>
-			<li><input type="" class="valores"  placeholder="0.00"></li>
-			<li><input type="" class="valores"  placeholder="0.00"></li>
+			<li><input name="silt" type="number" class="valores"  placeholder="0.00"></li>
+			<li><input name="clay" type="number" class="valores"  placeholder="0.00"></li>
+			<li><input name="gravel" type="number" class="valores"  placeholder="0.00"></li>
+			<li><input name="sand" type="number" class="valores"  placeholder="0.00"></li>
 		</ul>
 		
 		<ul class="Descripcion">
@@ -168,12 +168,12 @@
 		</ul>
 		
 		<ul class="Values">
-			<li><input type="" class="valores"  placeholder="0.00"></li>
-			<li><input type="" class="valores"  placeholder="0.00"></li>
-			<li><input type="" class="valores"  placeholder="0.00"></li>
-			<li><input type="" class="valores"  placeholder="0.00"></li>
-			<li><input type="color" class="valores"></li>
-			<li><input type="" class="valores"  placeholder="0.00"></li>
+			<li><input name="optimum_moisture_content" type="number" class="valores"  placeholder="0.00"></li>
+			<li><input name="plasticity_index" type="number" class="valores"  placeholder="0.00"></li>
+			<li><input name="grain_size" type="number" class="valores"  placeholder="0.00"></li>
+			<li><input name="water_content" type="number" class="valores"  placeholder="0.00"></li>
+			<li><input name="color" type="color" class="valores"></li>
+			<li><input name="tensile_strength" type="number" class="valores"  placeholder="0.00"></li>
 		</ul>
 		
 		<ul class="Descripcion">
@@ -220,12 +220,12 @@
 		</ul>
 		
 		<ul class="Values">
-			<li><input type="" class="valores"  placeholder="0.00"></li>
-			<li><input type="" class="valores"  placeholder="0.00"></li>
-			<li><input type="" class="valores"  placeholder="0.00"></li>
-			<li><input type="" class="valores"  placeholder="0.00"></li>
-			<li><input type="" class="valores"  placeholder="0.00"></li>
-			<li><input type="" class="valores"  placeholder="0.00"></li>
+			<li><input name="porosity" type="number" class="valores"  placeholder="0.00"></li>
+			<li><input name="initial_moisture" type="number" class="valores"  placeholder="0.00"></li>
+			<li><input name="earring" type="number" class="valores"  placeholder="0.00"></li>
+			<li><input name="ground_altitude" type="number" class="valores"  placeholder="0.00"></li>
+			<li><input name="average_temperature" type="number" class="valores"  placeholder="0.00"></li>
+			<li><input name="rainfall_regime" type="number" class="valores"  placeholder="0.00"></li>
 		</ul>
 		
 		<ul class="Descripcion">
@@ -240,6 +240,8 @@
 	<div class="Botones_sumbit">
 		  <a href="#" class="submit btn-prev">← Previus</a>
 		  <a href="#" class="submit btn-next">Next →</a>
+		<button type="submit">Guardar Físicas</button>
+
 	  </div>
 		  </div>
 	</form>
