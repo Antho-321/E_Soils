@@ -1,8 +1,10 @@
 import express from 'express';
 import {pool} from '../db.js';
-var bodyParser = require('body-parser');
+import pkg from 'body-parser';
+const { json, urlencoded } = pkg;
 const app = express();
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(json());
+app.use(urlencoded({ extended: true }));
 
 export const rutaPricipal = async(req,res) => {
     const resultadopeticion = await pool.query("SELECT * FROM clientes");
