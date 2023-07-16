@@ -2,8 +2,8 @@ import express from 'express';
 import morgan from "morgan";
 import cors from "cors";
 import homeRoutes from "./routes/home.routes.js";
-//rafaaaaaa
-//const bodyParser = require('body-parser');
+
+import bodyParser from 'body-parser';
 
 const app = express();
 
@@ -12,10 +12,10 @@ const app = express();
 app.set('port', process.env.PORT || 3000);
 app.set('url', `http://localhost:${app.get('port')}`);
 
-/*
-app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-*/
+
 
 // middlewares
 app.use(cors());
