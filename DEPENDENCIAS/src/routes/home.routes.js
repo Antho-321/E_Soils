@@ -6,6 +6,7 @@ import { rutaPricipal, postFisicas, PostRegistro_Suelos } from "../controllers/h
 router.get('/',rutaPricipal);
 
 
+
 router.post('/postFisicas', postFisicas);
 
 export default router;
