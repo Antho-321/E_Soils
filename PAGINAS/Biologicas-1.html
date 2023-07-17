@@ -67,17 +67,17 @@
           <th colspan="4"></th>
         </tr>
         <tr>
-          <form action="">
+          <form>
           <th>Types of organisms present</th>
-          <td><input type="text" class="valores txt_value_biological" placeholder="(Worms, nematodes, etc.)"></td>
+          <td><input type="text" class="valores txt_value_biological" id ="organismsPresent" placeholder="(Worms, nematodes, etc.)"></td>
           <th>Quantity</th>
-          <td><input type="number" class="valores"></td>
-          <td><button class="submit btn_añadir">Add</button></td>
+          <td><input type="number" id="numOrganisms" class="valores"></td>
+          <td><button id="btnAddOrganisms" class="submit btn_añadir">Add</button></td>
           </form>
         </tr>
         <tr>
           <th class="td_top">Additional remarks</th>
-          <td colspan="3"><textarea class="valores txtarea_biological" placeholder="(“The organisms were mostly found on the surface....”)"></textarea></td>
+          <td colspan="3"><textarea id="txtOrganisms" class="valores txtarea_biological" placeholder="(“The organisms were mostly found on the surface....”)"></textarea></td>
           <td></td>
         </tr>
         <tr>
@@ -280,4 +280,5 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="../js/Interaccion_Paginas.js"></script>
 	<script src="../js/fisicas.js"></script>
+  <!--script src="../js/btnAddBiologicas.js"></!script-->
 </html>
