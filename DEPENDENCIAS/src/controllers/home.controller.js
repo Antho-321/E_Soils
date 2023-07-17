@@ -1,7 +1,7 @@
 import {pool} from '../db.js';
 import pkg from 'body-parser';
 import express from 'express';
-var x;
+var usuario;
 const { json, urlencoded } = pkg;
 const app = express();
 app.use(json());
@@ -20,7 +20,7 @@ export const PostRegistro_Suelos = async(req, res) => {
 
 export const postRegistro_Usuario1 = async(req, res) => {
     try {
-x=[req.body.id_number,req.body.name, req.body.surname, req.body.email, req.body.password];
+        usuario=[req.body.id_number,req.body.name, req.body.surname, req.body.email, req.body.password];
 res.redirect('http://127.0.0.1:5500/PAGINAS/Sign-up-2.html');
     } catch (error) {
         console.error("Error en la consulta:", error);
@@ -32,7 +32,7 @@ export const postRegistro_Usuario2 = async(req, res) => {
 const resultado = await pool.query(`
     INSERT INTO clientes (
         idcli, names_, surnamecli, emailcli, passwordcli)        
-    VALUES ('${x[0]}', '${x[1]}', '${x[2]}', '${x[3]}', '${x[4]}')`
+    VALUES ('${usuario[0]}', '${usuario[1]}', '${usuario[2]}', '${usuario[3]}', '${usuario[4]}')`
     );
 
     if (resultado) return res.status(200).json(resultado.rows[0])
