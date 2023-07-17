@@ -1,176 +1,181 @@
 <!doctype html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<title>Register</title>
-<link href="../ESTILOS/Estilo_Index.css" rel="stylesheet" type="text/css">
-<link href="../ESTILOS/Estilo_Formularios.css" rel="stylesheet" type="text/css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Aleo:wght@500&display=swap" rel="stylesheet">
+	<meta charset="utf-8">
+	<title>Register</title>
+	<link href="../ESTILOS/Estilo_Index.css" rel="stylesheet" type="text/css">
+	<link href="../ESTILOS/Estilo_Formularios.css" rel="stylesheet" type="text/css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Aleo:wght@500&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="../ESTILOS/Estilo_Steps.css" type="text/css">
 </head>
 
 <body>
-<header class="Header" >
-		<img src="../IMAGENES/Logo.png" width="168.32" height="154" alt="Logo ESoils" class="Logo"/>
-		<ul class="menu" >
-	  <div id="cont_menu">
-		<li class="Boton_nav" onclick= "home()"><img src="../VECTORES/Ícono_home.svg" width="58" height="50" alt="" class="img_navigation"/>HOME</li>
-    <li class="Boton_nav" onclick= "mis_registros()"><img src="../VECTORES/registration.svg" width="46" height="50" alt="Registros" class="img_navigation"/> MY REGISTERS</li>
-    <li class="Boton_nav" onclick= "busqueda()"><img src="../VECTORES/imagen_2023-06-29_105553808.svg" width="50" height="50" alt="Búsqueda" class="img_navigation">SEARCH</li>  
-	  </div>
-    
-  </ul>
+	<header class="Header">
+		<img src="../IMAGENES/Logo.png" width="168.32" height="154" alt="Logo ESoils" class="Logo" />
+		<ul class="menu">
+			<div id="cont_menu">
+				<li class="Boton_nav" onclick="home()"><img src="../VECTORES/Ícono_home.svg" width="58" height="50"
+						alt="" class="img_navigation" />HOME</li>
+				<li class="Boton_nav" onclick="mis_registros()"><img src="../VECTORES/registration.svg" width="46"
+						height="50" alt="Registros" class="img_navigation" /> MY REGISTERS</li>
+				<li class="Boton_nav" onclick="busqueda()"><img src="../VECTORES/imagen_2023-06-29_105553808.svg"
+						width="50" height="50" alt="Búsqueda" class="img_navigation">SEARCH</li>
+			</div>
+
+		</ul>
 		<div class="Header_loguear">
-				  <div class="log" onclick= "login()">
-					<div class="Boton_log"> <strong> LOG IN</strong><strong>&nbsp; </strong></div>
-		  </div>
-				  <div class="Log" onclick= "signin()">
-					<div class="Boton_log" id="Registrarse"><strong> SIGN IN </strong> </div>
-		  </div>
-      </div>
+			<div class="log" onclick="login()">
+				<div class="Boton_log"> <strong> LOG IN</strong><strong>&nbsp; </strong></div>
+			</div>
+			<div class="Log" onclick="signin()">
+				<div class="Boton_log" id="Registrarse"><strong> SIGN IN </strong> </div>
+			</div>
+		</div>
 	</header>
-<section class="Data">
-	<form action="#">
-		<h1 class="Titulo_propiedades">Chemical properties</h1>
-		<div class="form-step form-step-active">
-			<!-- Progress bar 1-->
-			<div class="nav_steps"> 
-			  <a href="#" class="dot">1</a> 
-			  <a href="#" class="line"></a> 
+	<section class="Data">
+		<form action="http://localhost:3000/postQuimicas" class="form" method="post">
+			<h1 class="Titulo_propiedades">Chemical properties</h1>
+			<div class="form-step form-step-active">
+				<!-- Progress bar 1-->
+				<div class="nav_steps">
+					<a href="#" class="dot">1</a>
+					<a href="#" class="line"></a>
 
-			  <a href="#" class="line bg_wh"></a> 
-			  <a href="#" class="dot bg_wh">2</a> 
-			  <a href="#" class="line bg_wh"></a> 
+					<a href="#" class="line bg_wh"></a>
+					<a href="#" class="dot bg_wh">2</a>
+					<a href="#" class="line bg_wh"></a>
 
-			  <a href="#" class="line bg_wh"></a> 
-			  <a href="#" class="dot bg_wh">3</a> 
+					<a href="#" class="line bg_wh"></a>
+					<a href="#" class="dot bg_wh">3</a>
+				</div>
+
+				<div class="Steps">
+					<ul class="Tipo">
+						<li><strong>Alkalinity or acidity</strong></li>
+						<li><strong>Organic material</strong></li>
+						<li><strong>Total phosphorus</strong></li>
+						<li><strong>Extractable sulfur</strong></li>
+						<li><strong>Interchangeable aluminum</strong></li>
+					</ul>
+
+					<ul class="Values">
+						<li><input type="number" name="alkalinity_or_acidity" class="valores" placeholder="0.00"></li>
+						<li><input type="number" name="organic_material" class="valores" placeholder="0.00"></li>
+						<li><input type="number" name="total_phosphorus" class="valores" placeholder="0.00"></li>
+						<li><input type="number" name="extractable_sulfur" class="valores" placeholder="0.00"></li>
+						<li><input type="number" name="interchangeable_aluminum" class="valores" placeholder="0.00"></li>
+					</ul>
+
+					<ul class="Descripcion">
+						<li><strong>(0-14) pH</strong></li>
+						<li><strong>%MO</strong></li>
+						<li><strong>%P (mg/kg)</strong></li>
+						<li><strong>%S (mg/Kg)</strong></li>
+						<li><strong>(0-10) Al+H (Cmol/Kg)</strong></li>
+					</ul>
+				</div>
+				<div class="Botones_sumbit">
+					<a href="#" class="submit btn-prev">← Previus</a>
+					<a href="#" class="submit btn-next">Next →</a>
+				</div>
 			</div>
-			
-	<div class="Steps">
-	  <ul class="Tipo">
-			<li><strong>Alkalinity or acidity</strong></li>
-			<li><strong>Organic material</strong></li>
-			<li><strong>Total phosphorus</strong></li>
-			<li><strong>Extractable sulfur</strong></li>
-			<li><strong>Interchangeable aluminum</strong></li>
-		</ul>
-		
-		<ul class="Values">
-			<li><input type="number" class="valores"  placeholder="0.00"></li>
-			<li><input type="number" class="valores"  placeholder="0.00"></li>
-			<li><input type="number" class="valores"  placeholder="0.00"></li>
-			<li><input type="number" class="valores"  placeholder="0.00"></li>
-			<li><input type="number" class="valores"  placeholder="0.00"></li>
-		</ul>
-		
-		<ul class="Descripcion">
-			<li><strong>(0-14) pH</strong></li>
-			<li><strong>%MO</strong></li>
-			<li><strong>%P (mg/kg)</strong></li>
-			<li><strong>%S (mg/Kg)</strong></li>
-			<li><strong>(0-10) Al+H (Cmol/Kg)</strong></li>
-	  </ul>
-    </div>
-	<div class="Botones_sumbit">
-		<a href="#" class="submit btn-prev">← Previus</a>
-	    <a href="#" class="submit btn-next">Next →</a>
-	</div>
-	</div>
-		<div class="form-step">
-						<!-- Progress bar 2-->
-			<div class="nav_steps"> 
-			  <a href="#" class="dot bg_wh">1</a> 
-			  <a href="#" class="line  bg_wh"></a> 
+			<div class="form-step">
+				<!-- Progress bar 2-->
+				<div class="nav_steps">
+					<a href="#" class="dot bg_wh">1</a>
+					<a href="#" class="line  bg_wh"></a>
 
-			  <a href="#" class="line"></a> 
-			  <a href="#" class="dot">2</a> 
-			  <a href="#" class="line"></a> 
+					<a href="#" class="line"></a>
+					<a href="#" class="dot">2</a>
+					<a href="#" class="line"></a>
 
-			  <a href="#" class="line bg_wh"></a> 
-			  <a href="#" class="dot bg_wh">3</a> 
+					<a href="#" class="line bg_wh"></a>
+					<a href="#" class="dot bg_wh">3</a>
+				</div>
+
+				<div class="Steps">
+					<ul class="Tipo">
+						<li><strong>Electric conductivity</strong></li>
+						<li><strong>Exchangeable calcium</strong></li>
+						<li><strong>Exchangeable magnesium</strong></li>
+						<li><strong>Exchangeable potassium</strong></li>
+						<li><strong>Exchangeable sodium</strong></li>
+					</ul>
+
+					<ul class="Values">
+						<li><input type="number" name="electric_conductivity" class="valores" placeholder="0.00"></li>
+						<li><input type="number" name="exchangeable_calcium" class="valores" placeholder="0.00"></li>
+						<li><input type="number" name="exchangeable_magnesium" class="valores" placeholder="0.00"></li>
+						<li><input type="number" name="exchangeable_potassium" class="valores" placeholder="0.00"></li>
+						<li><input type="number" name="exchangeable_sodium" class="valores" placeholder="0.00"></li>
+					</ul>
+
+					<ul class="Descripcion">
+						<li><strong>(0-5) CE (ds/m)</strong></li>
+						<li><strong>% Ca (Cmol/Kg)/(meq/100g)</strong></li>
+						<li><strong>% Mg (Cmol/Kg)</strong></li>
+						<li><strong>% K (Cmol/Kg)</strong></li>
+						<li><strong>% Na (Cmol/Kg)</strong></li>
+					</ul>
+				</div>
+				<div class="Botones_sumbit">
+					<a href="#" class="submit btn-prev">← Previus</a>
+					<a href="#" class="submit btn-next">Next →</a>
+				</div>
 			</div>
-			
-	<div class="Steps">
-	  <ul class="Tipo">
-			<li><strong>Electric conductivity</strong></li>
-			<li><strong>Exchangeable calcium</strong></li>
-			<li><strong>Exchangeable magnesium</strong></li>
-			<li><strong>Exchangeable potassium</strong></li>
-			<li><strong>Exchangeable sodium</strong></li>
-		</ul>
-		
-		<ul class="Values">
-			<li><input type="" class="valores"  placeholder="0.00"></li>
-			<li><input type="" class="valores"  placeholder="0.00"></li>
-			<li><input type="" class="valores"  placeholder="0.00"></li>
-			<li><input type="" class="valores"  placeholder="0.00"></li>
-			<li><input type="" class="valores"  placeholder="0.00"></li>
-		</ul>
-		
-		<ul class="Descripcion">
-			<li><strong>(0-5)CE(ds/m)</strong></li>
-			<li><strong>%Ca(Cmol/Kg)/(meq/100g)</strong></li>
-			<li><strong>%Mg(Cmol/Kg)</strong></li>
-			<li><strong>%K(Cmol/Kg)</strong></li>
-			<li><strong>%Na(Cmol/Kg)</strong></li>
-	  </ul>
-    </div>
-	<div class="Botones_sumbit">
-			  <a href="#" class="submit btn-prev">← Previus</a>
-			  <a href="#" class="submit btn-next">Next →</a>
-		</div>
-			</div>
-		<div class="form-step">
-						<!-- Progress bar 3-->
-			<div class="nav_steps"> 
-			  <a href="#" class="dot bg_wh">1</a> 
-			  <a href="#" class="line bg_wh"></a> 
+			<div class="form-step">
+				<!-- Progress bar 3-->
+				<div class="nav_steps">
+					<a href="#" class="dot bg_wh">1</a>
+					<a href="#" class="line bg_wh"></a>
 
-			  <a href="#" class="line bg_wh"></a> 
-			  <a href="#" class="dot bg_wh">2</a> 
-			  <a href="#" class="line bg_wh"></a> 
+					<a href="#" class="line bg_wh"></a>
+					<a href="#" class="dot bg_wh">2</a>
+					<a href="#" class="line bg_wh"></a>
 
-			  <a href="#" class="line"></a> 
-			  <a href="#" class="dot">3</a> 
+					<a href="#" class="line"></a>
+					<a href="#" class="dot">3</a>
+				</div>
+
+				<div class="Steps">
+					<ul class="Tipo">
+						<li><strong>Extractable copper</strong></li>
+						<li><strong>Removable iron</strong></li>
+						<li><strong>Extractable manganese</strong></li>
+						<li><strong>Extractable zinc</strong></li>
+						<li><strong>Boron</strong></li>
+					</ul>
+
+					<ul class="Values">
+						<li><input type="number" name="extractable_copper" class="valores" placeholder="0.00"></li>
+						<li><input type="number" name="removable_iron" class="valores" placeholder="0.00"></li>
+						<li><input type="number" name="extractable_manganese" class="valores" placeholder="0.00"></li>
+						<li><input type="number" name="extractable_zinc" class="valores" placeholder="0.00"></li>
+						<li><input type="number" name="boron" class="valores" placeholder="0.00"></li>
+					</ul>
+
+					<ul class="Descripcion">
+						<li><strong>% Cu (mg/Kg)</strong></li>
+						<li><strong>% Fe (mg/Kg)</strong></li>
+						<li><strong>% Mn (mg/Kg)</strong></li>
+						<li><strong>% Zn (mg/Kg)</strong></li>
+						<li><strong>% B (mg/Kg)</strong></li>
+					</ul>
+				</div>
+				<div class="Botones_sumbit">
+					<a href="#" class="submit btn-prev">← Previus</a>
+					<!--a href="#" class="submit btn-next">Next →</!--a-->
+					<button type="submit" class="submit btn-next">Next →</button>
+				</div>
 			</div>
-			
-	<div class="Steps">
-	  <ul class="Tipo">
-			<li><strong>Extractable copper</strong></li>
-			<li><strong>Removable iron</strong></li>
-			<li><strong>Extractable manganese</strong></li>
-			<li><strong>Extractable zinc</strong></li>
-			<li><strong>Boron</strong></li>
-		</ul>
-		
-		<ul class="Values">
-			<li><input type="" class="valores"  placeholder="0.00"></li>
-			<li><input type="" class="valores"  placeholder="0.00"></li>
-			<li><input type="" class="valores"  placeholder="0.00"></li>
-			<li><input type="" class="valores"  placeholder="0.00"></li>
-			<li><input type="" class="valores"  placeholder="0.00"></li>
-		</ul>
-		
-		<ul class="Descripcion">
-			<li><strong>%Cu(mg/Kg)</strong></li>
-			<li><strong>%Fe(mg/Kg)</strong></li>
-			<li><strong>%Mn(mg/Kg)</strong></li>
-			<li><strong>%Zn(mg/Kg)</strong></li>
-			<li><strong>%B(mg/Kg)</strong></li>
-	  </ul>
-    </div>
-	<div class="Botones_sumbit">
-			  <a href="#" class="submit btn-prev">← Previus</a>
-			  <a href="#" class="submit btn-next">Next →</a>
-		</div>
-	</div>
-	</form>
-</section>
+		</form>
+	</section>
 </body>
-	<script src="../js/Interaccion_Paginas.js"></script>
-	<script src="../js/fisicas.js"></script>
-</html>
+<script src="../js/Interaccion_Paginas.js"></script>
+<script src="../js/fisicas.js"></script>
 
+</html>
