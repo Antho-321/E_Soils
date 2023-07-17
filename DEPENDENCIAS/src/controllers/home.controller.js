@@ -1,12 +1,8 @@
 import {pool} from '../db.js';
 import pkg from 'body-parser';
 import express from 'express';
-import path from 'path';
-import { fileURLToPath } from 'url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
+var x;
 const { json, urlencoded } = pkg;
 const app = express();
 app.use(json());
@@ -21,8 +17,6 @@ export const PostRegistro_Suelos = async(req, res) => {
 
 };
 
-var x;
-
 export const postRegistro_Usuario1 = async(req, res) => {
     try {
 x=[req.body.id_number,req.body.name, req.body.surname, req.body.email, req.body.password];
@@ -36,8 +30,7 @@ res.redirect('http://127.0.0.1:5500/PAGINAS/Sign-up-2.html');
 export const postRegistro_Usuario2 = async(req, res) => {
 const resultado = await pool.query(`
     INSERT INTO clientes (
-        idcli, names_, surnamecli, emailcli, passwordcli) 
-        
+        idcli, names_, surnamecli, emailcli, passwordcli)        
     VALUES ('${x[0]}', '${x[1]}', '${x[2]}', '${x[3]}', '${x[4]}')`
     );
 
