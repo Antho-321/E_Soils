@@ -75,6 +75,9 @@ body{
     position: relative;
     height: 2.5rem;
 }
+.Finalizar:hover{
+    background: rgb(59, 59, 59);
+}
 .btnfinal{
     display: flex;
     justify-content: flex-end;
