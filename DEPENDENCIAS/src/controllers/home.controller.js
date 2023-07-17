@@ -11,10 +11,35 @@ export const rutaPricipal = async(req,res) => {
         res.json(resultadopeticion)
 };
 
-export const PostRegistro_Suelos = async(req, res) => {
+export const postRegistro_Suelos = async(req, res) => {
 
 };
 
+export const postRegistro_Usuario = async(req, res) => {
+    try {
+        const {
+            id_number, name, surname, email, password
+        } = req.body;
+
+        const resultado = await pool.query(`
+        INSERT INTO physical_properties (
+            idcli, names_, surnamecli, emailcli, passwordcli) 
+            
+        VALUES ($1, $2, $3, $4, $5) 
+        RETURNING *`,
+
+            [
+                id_number, name, surname, email, password
+            ]
+        );
+
+        if (resultado) return res.status(200).json(resultado.rows[0])
+
+    } catch (error) {
+        console.error("Error en la consulta:", error);
+        throw error;
+    }
+};
 
 // Manejo de la solicitud POST para obtener los datos del formulario Propiedades Físicas
 export const postFisicas = async (req, res) =>
