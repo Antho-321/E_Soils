@@ -3,6 +3,11 @@
 body{
     background: #E8EAEE;
 }
+
+.espacio{
+    padding-top: 130px;
+}
+
 .titles{
     display: flex;
     flex-direction: column;
@@ -16,41 +21,55 @@ body{
     position: relative;
 }
 
+.segundo_cuadro{
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-bottom: 10px;
+}
+
+.ordenes{
+    margin-top: 35px;
+    text-align: end;
+}
+
 .ordenes h3{
     margin-bottom: 30px;
 }
 
 .inputs{
     display: flex;
+    justify-content: center;
     flex-direction: column;
-    position: relative;
-    padding-top: 5.5rem;
-    
 }
 .inputs input {
     margin-top: 1.3em;
     margin-left: 1em;
-    border-radius: 5px;
+    border-radius: 12px;
     border: none;
+    text-align: center;
 }
-.caracteristicas{
-    position: relative;
-    left: 0.75em;
+.caracteristicas{   
+    margin-top: 0px; 
     color: rgb(104, 104, 104);
-    padding-top: 0.5rem;
+    width: 600px;
+}
+.caracteristicas h4{
+    padding-bottom: 30px;
 }
 .selectclass{
     display: flex;
     flex-direction: column;
-    padding-top: 1.75rem;
-    padding-left: 0.25rem;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 30px;
 }
-
-#granGrupo, #subGrupo{
-    position: relative;
-    top: 1.5rem;
+.opciones{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    width: 100px;
 }
-
 .nombresuelo{
     display: flex;
     justify-content: center;
@@ -71,6 +90,7 @@ body{
     text-decoration: none;
     border-radius: 6px;
     margin-right: 5px;
+    margin-right: 100px;
 }
 .Finalizar{
     background: black;

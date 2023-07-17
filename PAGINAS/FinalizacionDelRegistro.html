@@ -7,8 +7,9 @@
 </head>
 <link rel="stylesheet" href="../ESTILOS/Estilo_FinalizacionDelRegistro.css">
 <link rel="stylesheet" href="../ESTILOS/Estilo_Index.css">
+
 <body>
-    <!-- <header class="Header">
+    <header class="Header">
         <img src="../IMAGENES/Logo.png" width="168.32" height="154" alt="Logo ESoils" class="Logo" />
         <ul class="menu">
             <div id="cont_menu">
@@ -29,8 +30,9 @@
                 <div class="Boton_log" id="Registrarse"><strong> SIGN IN </strong> </div>
             </div>
         </div>
-    </header> -->
-    <form action="http://localhost:3000/postClasification" method="post">
+    </header>
+    <div class="espacio"></div>
+    <form action="http://localhost:3000/postClasification" method="post" class="contenedor_clasificacion">
         <div class="titles">
             <h1>Registration Completion</h1>
             <h2>Soil Classification</h2>
@@ -45,9 +47,10 @@
             </div>
 
             <div class="inputs">
-                <div></div>
-                <input type="text" id="inputBuscarGranGrupo" placeholder="Search" />
-                <input type="text" id="inputBuscarSubGrupo" placeholder="Search" />
+                <input class="segundo_cuadro" placeholder="Insert Order" id="none1" />
+                <input class="segundo_cuadro" placeholder="Insert Suborder" id="none2" />
+                <input type="text" id="inputBuscarGranGrupo" placeholder="Search" class="segundo_cuadro" />
+                <input type="text" id="inputBuscarSubGrupo" placeholder="Search" class="segundo_cuadro" />
             </div>
 
             <div class="selectclass">
@@ -65,8 +68,6 @@
                     <option value="Inceptisol">Inceptisol</option>
                     <option value="Entisol">Entisol</option>
                 </select>
-                <br>
-
                 <select id="opSuborden" name="suborden" class="opciones">
                 </select>
 
@@ -89,6 +90,7 @@
             </div>
 
             <div class="caracteristicas">
+                <h4></h4>
                 <h4 id="hOrden"></h4>
                 <h4 id="hSuborden"></h4>
                 <h4 id="hGranGrupo"></h4>
@@ -105,5 +107,6 @@
     </form>
 </body>
 <script src="../js/js_FinalizacionDelRegistro.js"></script>
+<script src="../js/Interaccion_Paginas.js"></script>
 
 </html>

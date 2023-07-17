@@ -31,4 +31,7 @@ function aboutus() {
     window.location.href = "About_us.html";
 }
 
-
+var none1 = document.getElementById('none1');
+var none2 = document.getElementById('none2');2
+none1.disabled = true;
+none2.disabled = true;
