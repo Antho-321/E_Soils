@@ -3,7 +3,7 @@ const router = Router();
 
 
 import { rutaPricipal, postFisicas, PostRegistro_Suelos, postQuimicas, postClasification,
-putClient } from "../controllers/home.controller.js";
+postEditProfile } from "../controllers/home.controller.js";
 router.get('/',rutaPricipal);
 
 
@@ -11,5 +11,5 @@ router.post('/postFisicas', postFisicas);
 router.post('/postQuimicas', postQuimicas);
 router.post('/postClasification', postClasification);
 
-router.put('/putClient', putClient);
+router.post('/postEditProfile', postEditProfile);
 export default router;

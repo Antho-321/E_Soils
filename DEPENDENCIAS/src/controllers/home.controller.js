@@ -137,6 +137,66 @@ export const postQuimicas = async (req, res) =>
 }
 
 
+// Manejo de la solicitud POST para obtener los datos del formulario Propiedades Biologicas
+export const postBiologicas = async (req, res) =>
+{
+    try {
+        const {
+            
+        ide_suelo,
+        organisms_description,
+        microbial_activity,
+        microbial_intensity,
+        microbial_description,
+        biomass_method,
+        biomass_results,
+        biomass_description,
+        macroinvertebrates_description,
+        average_depth,
+        measurement_method,
+        additional_remarks,
+
+        organism,
+        number_organism,
+
+        macroinvertebrates,
+        number_macroinvertebrates
+        } = req.body;
+
+        // Parsear los valores a float
+        const average_depth1 = parseFloat(average_depth);
+        const number_organism1 = parseFloat(number_organism);
+        const number_macroinvertebrates1 = parseFloat(number_macroinvertebrates);
+
+        //console.log("El tipo es   ",boron1);
+
+        const resultado = await pool.query(`
+        SELECT COUNT(ide_biological) + 1 as total_registros from biological_properties;
+        INSERT INTO biological_properties (
+            
+            ) 
+            
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) 
+        RETURNING *`,
+
+            [
+                alkalinity_or_acidity1, organic_material1, total_phosphorus1,
+                extractable_sulfur1, interchangeable_aluminum1, electric_conductivity1, exchangeable_calcium1,
+                exchangeable_magnesium1,exchangeable_potassium1,exchangeable_sodium1,extractable_copper1,
+                removable_iron1,extractable_manganese1,extractable_zinc1, boron1
+            ]
+        );
+
+        if (resultado) return res.status(200).json(resultado.rows[0])
+
+    } catch (error) {
+        console.error("Error en la consulta:", error);
+        throw error;
+    }
+}
+
+
+
 // Manejo de la solicitud POST para obtener los datos del formulario Propiedades Quimicas
 export const postClasification = async (req, res) =>
 {
@@ -172,23 +232,25 @@ export const postClasification = async (req, res) =>
 
 
 // Manejo de la solicitud POST para obtener los datos del formulario Propiedades Quimicas
-export const putClient = async (req, res) =>
+export const postEditProfile = async (req, res) =>
 {
     try {
-        const {
+        const {idcli, 
             picture, names_, surname, emailcli, passwordcli
         } = req.body;
 
         console.log("El tipo es   ",picture);
 
         const resultado = await pool.query(`
-        UPDATE INTO clasification (
-            picture, names_, surname, emailcli, passwordcli) 
+        UPDATE INTO clientes (
+            picture, names_, surname, passwordcli) 
             
-        VALUES ($1, $2, $3, $4, $5) 
+        VALUES ($1, $2, $3, $4) 
+        WHERE ($5 = $6)
         RETURNING *`,
             [
-                picture, names_, surname, emailcli, passwordcli
+                picture, names_, surname, passwordcli,
+                idcli, clientes.idcli
             ]
         );
 
