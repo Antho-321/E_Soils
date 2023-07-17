@@ -26,7 +26,7 @@ var x;
 export const postRegistro_Usuario1 = async(req, res) => {
     try {
 x=[req.body.id_number,req.body.name, req.body.surname, req.body.email, req.body.password];
-res.redirect('/postRegistro_Usuario2');
+res.redirect('http://127.0.0.1:5500/PAGINAS/Sign-up-2.html');
     } catch (error) {
         console.error("Error en la consulta:", error);
         throw error;
@@ -34,18 +34,6 @@ res.redirect('/postRegistro_Usuario2');
 };
 
 export const postRegistro_Usuario2 = async(req, res) => {
-
-    try {
-        res.redirect('http://127.0.0.1:5500/PAGINAS/Sign-up-2.html');
-console.log("test2: "+x[0]);
-    } catch (error) {
-        console.error("Error en la consulta:", error);
-        throw error;
-    }
-    console.log(x[0]);
-}
-
-export const postRegistro_Usuario3 = async(req, res) => {
 const resultado = await pool.query(`
     INSERT INTO clientes (
         idcli, names_, surnamecli, emailcli, passwordcli) 
