@@ -1,54 +1,66 @@
 <!doctype html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<title>Edit Profile</title>
+	<meta charset="utf-8">
+	<title>Edit Profile</title>
 	<link rel="stylesheet" href="../ESTILOS/Estilo_EditProfile.css">
+	<link rel="stylesheet" href="../ESTILOS/Estilo_Index.css">
 </head>
 
 <body id="idbody">
 
-	  <div class="profile">
-		<div class="content">
-			
-		  	<div class="text">
-				<h1 class="titulo"><strong>Edit Profile</strong></h1>
-		 		<h2 class="titulo"> Profile Photo</h2>
+		</ul>
+		<div class="Header_loguear">
+			<div class="log" onclick="login()">
+				<div class="Boton_log"> <strong> LOG IN</strong><strong>&nbsp; </strong></div>
 			</div>
-		  <form action="http://localhost:3000/postEditProfile" method="" id="formEditProfile">
-			  <div class="classimage">
-			  	<img src="../images/Profile Photo.png" alt="Profile Photo">
-			  	
-			  </div>
-			  		 
-			  <div class="uploadbuton">
-			  	  <label for="file-upload
-				  " class="custom-file-upload">
-				  <span>Upload Photo</span>
-				  </label>
-				  <input id="file-upload" class="file" type="file" name="picture" accept="image/*">
-			  </div>
+			<div class="Log" onclick="signin()">
+				<div class="Boton_log" id="Registrarse"><strong> SIGN IN </strong> </div>
+			</div>
+		</div>
+	</header>
+	<div class="separador"></div>
+	<div class="profile">
+		<div class="content">
+
+			<div class="text">
+				<h1 class="titulo"><strong>Edit Profile</strong></h1>
+				<h2 class="titulo"> Profile Photo</h2>
+			</div>
+			<form action="http://localhost:3000/postEditProfile" method="" id="formEditProfile">
+				<div class="classimage">
+					<img src="../images/Profile Photo.png" alt="Profile Photo">
+
+				</div>
+
+				<div class="uploadbuton">
+					<label for="file-upload" class="custom-file-upload">
+						<span>Upload Photo</span>
+					</label>
+					<input id="file-upload" class="file" type="file" name="picture" accept="image/*">
+				</div>
 
 			  <div class="classul">
 			  	<ul class="ul1">
 					<li>
 						<label for="DocumenIdentification">Document Identification</label>
 
-					</li> 
-					 <li>
-						<label for="Email">Email</label>
-					 </li>
-					 <li>
-						<label for="newname">New Name</label>
-					 </li>
-					 <li>
-						<label for="newlastname">New Last Name</label>
-					 </li>
-					 <li>
-						<label for="password">New Password</label>
-					 </li>
-					 <li>
-						<label for="rpassword">Repeat New Password</label>
+						</li>
+						<li>
+							<label for="Email">Email</label>
+						</li>
+						<li>
+							<label for="newname">New Name</label>
+						</li>
+						<li>
+							<label for="newlastname">New Last Name</label>
+						</li>
+						<li>
+							<label for="password">New Password</label>
+						</li>
+						<li>
+							<label for="rpassword">Repeat New Password</label>
 
 					 </li>
 				  </ul>
@@ -85,8 +97,10 @@
 			  
 		  </form>
 		</div>
-	  </div>
+	</header>
+	<div class="separador"></div>
+	<div class="profile">
+		<div class="content">
 
 </body>
-<script src="../js/EditProfile.js"></script>
 </html>
