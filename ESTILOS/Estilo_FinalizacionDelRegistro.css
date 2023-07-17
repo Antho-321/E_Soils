@@ -10,10 +10,14 @@ body{
 }
 
 .cuerpo{
+    margin-top: 40px;
     display: flex;
     justify-content: center;
     position: relative;
+}
 
+.ordenes h3{
+    margin-bottom: 30px;
 }
 
 .inputs{
