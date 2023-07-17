@@ -15,7 +15,7 @@
 				<h1 class="titulo"><strong>Edit Profile</strong></h1>
 		 		<h2 class="titulo"> Profile Photo</h2>
 			</div>
-		  <form action="">
+		  <form action="http://localhost:3000/postEditProfile" method="" id="formEditProfile">
 			  <div class="classimage">
 			  	<img src="../images/Profile Photo.png" alt="Profile Photo">
 			  	
@@ -25,7 +25,7 @@
 			  	  <label for="file-upload" class="custom-file-upload">
 				  <span>Upload Photo</span>
 				  </label>
-				  <input id="file-upload" class="file" type="file" name="ProfilePhoto" accept="image/*">
+				  <input id="file-upload" class="file" type="file" name="picture" accept="image/*">
 			  </div>
 
 			  <div class="classul">
@@ -56,19 +56,19 @@
 					  <li>
 						  
 						<div class="noeditables">
-						  <label  for="DI">1002003000</label>
-						  <label for="Email">example@example.com</label>
+						  <label  name="idcli" for="DI">1002003000</label>
+						  <label name="emailcli" for="Email">example@example.com</label>
 						</div>
 					</li> 
 
 					 <li>
-						<input type="text" name="name" placeholder="Jorge Rafael">					
+						<input type="text" name="names_" placeholder="Jorge Rafael">					
 					 </li>
 					 <li>
-						 <input type="text" name="lname" placeholder="Rosero">		
+						 <input type="text" name="surname" placeholder="Rosero">		
 					 </li>
 					 <li>
-						<input type="password" name="password">
+						<input type="password" name="passwordcli">
 					 </li>
 					 <li>
 						 <input type="password" name="npassword">
@@ -78,8 +78,8 @@
 			  
 			  <div class="botones">
 				  <a class="css-boton cancelar" href="#">Cancel</a>
-				  <input class = "css-boton save" type="submit" value="Save Changes">
-				  
+				  <!--input class = "css-boton save" type="submit" value="Save Changes"-->
+				  <button class = "css-boton save" type="submit">Save Changes</button>
 			  </div>
 			  
 		  </form>

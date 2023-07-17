@@ -167,4 +167,36 @@ export const postClasification = async (req, res) =>
 }
 
 
+
+
+
+
+// Manejo de la solicitud POST para obtener los datos del formulario Propiedades Quimicas
+export const putClient = async (req, res) =>
+{
+    try {
+        const {
+            picture, names_, surname, emailcli, passwordcli
+        } = req.body;
+
+        console.log("El tipo es   ",picture);
+
+        const resultado = await pool.query(`
+        UPDATE INTO clasification (
+            picture, names_, surname, emailcli, passwordcli) 
+            
+        VALUES ($1, $2, $3, $4, $5) 
+        RETURNING *`,
+            [
+                picture, names_, surname, emailcli, passwordcli
+            ]
+        );
+
+    if (resultado) return res.status(200).json(resultado.rows[0])
+
+    } catch (error) {
+        console.error("Error en la consulta:", error);
+        throw error;
+    }
+}
 //#endregion
