@@ -10,35 +10,83 @@
 </head>
 
 <body>
-	<header class="Header">
-		<img src="../IMAGENES/Logo.png" width="168.32" height="154" alt="Logo ESoils" class="Logo" />
-		<ul class="menu">
-			<div id="cont_menu">
-				<li class="Boton_nav" onclick="home()"><img src="../VECTORES/Ícono_home.svg" width="58" height="50"
-						alt="" class="img_navigation" />HOME</li>
-				<li class="Boton_nav" onclick="mis_registros()"><img src="../VECTORES/registration.svg" width="46"
-						height="50" alt="Registros" class="img_navigation" /> MY REGISTERS</li>
-				<li class="Boton_nav" onclick="busqueda()"><img src="../VECTORES/imagen_2023-06-29_105553808.svg"
-						width="50" height="50" alt="Búsqueda" class="img_navigation">SEARCH</li>
-			</div>
-
-		</ul>
+<header class="Header" >
+		<img src="../IMAGENES/Logo.png" width="168.32" height="154" alt="Logo ESoils" class="Logo"/>
+		<ul class="menu" >
+	  <div id="cont_menu">
+		<li class="Boton_nav" onclick= "home()"><img src="../VECTORES/Ícono_home.svg" width="58" height="50" alt="" class="img_navigation"/>HOME</li>
+    <li class="Boton_nav" onclick= "mis_registros()"><img src="../VECTORES/registration.svg" width="46" height="50" alt="Registros" class="img_navigation"/> MY REGISTERS</li>
+    <li class="Boton_nav" onclick= "busqueda()"><img src="../VECTORES/imagen_2023-06-29_105553808.svg" width="50" height="50" alt="Búsqueda" class="img_navigation">SEARCH</li>  
+	  </div>
+    
+  </ul>
 		<div class="Header_loguear">
-			<div class="log" onclick="login()">
-				<div class="Boton_log"> <strong> LOG IN</strong><strong>&nbsp; </strong></div>
-			</div>
-			<div class="Log" onclick="signin()">
-				<div class="Boton_log" id="Registrarse"><strong> SIGN IN </strong> </div>
-			</div>
-		</div>
+				  <div class="log" onclick= "login()">
+					<div class="Boton_log"> <strong> LOG IN</strong><strong>&nbsp; </strong></div>
+		  </div>
+				  <div class="Log" onclick= "signin()">
+					<div class="Boton_log" id="Registrarse"><strong> SIGN IN </strong> </div>
+		  </div>
+      </div>
 	</header>
-	<section class="Data">
-		<form action="http://localhost:3000/postFisicas" class="form" method="post" enctype="application/x-www-form-urlencoded">
-			<h1 class="Titulo_propiedades">Physical Properties</h1>
-			<div class="form-step form-step-active">
+<section class="Data">	
+	<form action="http://localhost:3000/postFisicas" class="form" method="post">
+	  <h1 class="Titulo_propiedades">Physical Properties</h1>
+	  <div class="form-step form-step-active">
+		  <!-- Progress bar 1-->
+			<div class="nav_steps"> 
+			  <a href="#" class="dot">1</a> 
+			  <a href="#" class="line"></a> 
+
+			  <a href="#" class="line bg_wh"></a> 
+			  <a href="#" class="dot bg_wh">2</a> 
+			  <a href="#" class="line bg_wh"></a> 
+
+			  <a href="#" class="line bg_wh"></a> 
+			  <a href="#" class="dot bg_wh">3</a> 
+			  <a href="#" class="line bg_wh"></a>
+
+					<a href="#" class="line bg_wh"></a>
+					<a href="#" class="dot bg_wh">4</a>
+				</div>
+				<div class="Steps">
+					<ul class="Tipo">
+						<li><strong>Apparent density</strong></li>
+						<li><strong>Real density</strong></li>
+						<li><strong>Relative density</strong></li>
+						<li><strong>Maximum dry density</strong></li>
+						<li><strong>Compressive strength</strong></li>
+						<li><strong>Thermal conductivity</strong></li>
+					</ul>
+
+					<ul class="Values">
+						<li><input name="apparent_density" type="number" class="valores" placeholder="0.00"></li>
+						<li><input name="real_density" type="number" class="valores" placeholder="0.00"></li>
+						<li><input name="relative_density" type="number" class="valores" placeholder="0.00"></li>
+						<li><input name="maximum_dry_density" type="number" class="valores" placeholder="0.00"></li>
+						<li><input name="compressive_strength" type="number" class="valores" placeholder="0.00"></li>
+						<li><input name="thermal_conductivity" type="number" class="valores" placeholder="0.00"></li>
+					</ul>
+
+					<ul class="Descripcion">
+						<li><strong>gcm^-3</strong></li>
+						<li><strong>gcm^-3</strong></li>
+						<li>&nbsp</li>
+						<li><strong>(Mg/m)^3</strong></li>
+						<li><strong>MPa</strong></li>
+						<li><strong>(Wm)^-1 K^-1</strong></li>
+					</ul>
+				</div>
+				<div class="Botones_sumbit">
+					<a href="#" class="submit btn-prev">← Previus</a>
+					<a href="#" class="submit btn-next">Next →</a>
+				</div>
+			</div>
+			<div class="form-step">
+				<!-- Progress bar 2-->
 				<div class="nav_steps">
-					<a href="#" class="dot">1</a>
-					<a href="#" class="line"></a>
+					<a href="Biologicas-1.html" class="dot bg_wh">1</a>
+					<a href="#" class="line bg_wh"></a>
 
 					<a href="#" class="line bg_wh"></a>
 					<a href="#" class="dot bg_wh">2</a>
@@ -140,78 +188,6 @@
 					<a href="#" class="submit btn-prev">← Previus</a>
 					<a href="#" class="submit btn-next">Next →</a>
 				</div>
-			</div>
-			<div class="form-step">
-
-				<!-- Progress bar 3-->
-				<div class="nav_steps">
-					<a href="Biologicas-1.html" class="dot bg_wh">1</a>
-					<a href="#" class="line bg_wh"></a>
-
-					<a href="#" class="line bg_wh"></a>
-					<a href="#" class="dot bg_wh">2</a>
-					<a href="#" class="line bg_wh"></a>
-
-					<a href="#" class="line"></a>
-					<a href="#" class="dot">3</a>
-					<a href="#" class="line"></a>
-
-					<a href="#" class="line bg_wh"></a>
-					<a href="#" class="dot bg_wh">4</a>
-				</div>
-
-				<div class="Steps">
-					<ul class="Tipo">
-						<li><strong>Optimum moisture content</strong></li>
-						<li><strong>Plasticity index</strong></li>
-						<li><strong>Grain size</strong></li>
-						<li><strong>Water content</strong></li>
-						<li><strong>Color</strong></li>
-						<li><strong>Tensile strength</strong></li>
-					</ul>
-
-					<ul class="Values">
-						<li><input name="optimum_moisture_content" type="number" class="valores" placeholder="0.00">
-						</li>
-						<li><input name="plasticity_index" type="number" class="valores" placeholder="0.00"></li>
-						<li><input name="grain_size" type="number" class="valores" placeholder="0.00"></li>
-						<li><input name="water_content" type="number" class="valores" placeholder="0.00"></li>
-						<li><input name="color" type="color" class="valores"></li>
-						<li><input name="tensile_strength" type="number" class="valores" placeholder="0.00"></li>
-					</ul>
-
-					<ul class="Descripcion">
-						<li><strong>%</strong></li>
-						<li><strong>%</strong></li>
-						<li><strong>mm</strong></li>
-						<li><strong>%peso/peso</strong></li>
-						<li>&nbsp</li>
-						<li><strong>Kg/cm^2</strong></li>
-					</ul>
-				</div>
-				<div class="Botones_sumbit">
-					<a href="#" class="submit btn-prev">← Previus</a>
-					<a href="#" class="submit btn-next">Next →</a>
-
-				</div>
-			</div>
-			<div class="form-step">
-				<!-- Progress bar 4-->
-				<div class="nav_steps">
-					<a href="Biologicas-1.html" class="dot bg_wh">1</a>
-					<a href="#" class="line bg_wh"></a>
-
-					<a href="#" class="line bg_wh"></a>
-					<a href="#" class="dot bg_wh">2</a>
-					<a href="#" class="line bg_wh"></a>
-
-					<a href="#" class="line bg_wh"></a>
-					<a href="#" class="dot bg_wh">3</a>
-					<a href="#" class="line bg_wh"></a>
-
-					<a href="#" class="line"></a>
-					<a href="#" class="dot">4</a>
-				</div>
 
 				<div class="Steps">
 					<ul class="Tipo">
@@ -243,16 +219,10 @@
 				</div>
 				<div class="Botones_sumbit">
 					<a href="#" class="submit btn-prev">← Previus</a>
-					<a href="#" class="submit btn-next">Next →</a>
-					<button type="submit">Guardar Físicas</button>
-
-				</div>
-			</div>
-		</form>
-	</section>
+					<!--a href="#" type="submit" class="submit btn-next">Next →</a-->
+					<button type="submit" class="submit btn-next">Next →</button>
 
 </body>
-<script src="../js/fisicas.js"></script>
-<script src="../js/Interaccion_Paginas.js"></script>
-
+	<script src="../js/fisicas.js"></script>
+	<script src="../js/Interaccion_Paginas.js"></script>
 </html>
