@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<title>Documento sin título</title>
@@ -8,38 +9,40 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@150&display=swap" rel="stylesheet">
 </head>
+
 <body>
-<div class="esp_img"><img src="../IMAGENES/Logo-version2.png" width="230" alt=""/>
-	<h1><b>Sign up</b></h1>
-	<p>
-	  <input type="text" name="name" id="name" class="boxes" placeholder="Name">
-	</p>
-	<p>
-	  <input type="text" name="surname" id="surname" class="boxes" placeholder="Surname">
-	</p>
-	<p>
-	  <input type="text" name="id_number" id="id_number" class="boxes" placeholder="Identification number">
-	</p>
-	<p>
-	  <input type="email" name="email" id="email" class="boxes" placeholder="Email">
-	</p>
-	<p>
-	  <input type="password" name="password" id="password" class="boxes" placeholder="Password">
-	</p>
-	<p>
-	  <input type="password" name="r_password" id="r_password" class="boxes" placeholder="Repeat password">
-	</p>
-    <div class="cont_btn_login">
-		<div class="cont_aux_btn_login">
-			<p id="arrow">🡢</p>
-			  <button id="submit">Sign up</button>
-		</div>	
-    </div>
-	<div id="final_txt">
-		<p id="without_account">Already have an account?</p>
-		<a href="Login-general.html" class="btn-log-sign"><b>Log in</b></a>
-	</div>
-</div>
+	<form action="http://localhost:3000/postRegistro_Usuario1" method="post" class="esp_img"><img src="../IMAGENES/Logo-version2.png" width="230" alt="" />
+		<h1><b>Sign up</b></h1>
+		<p>
+			<input type="text" name="name" id="name" class="boxes" placeholder="Name">
+		</p>
+		<p>
+			<input type="text" name="surname" id="surname" class="boxes" placeholder="Surname">
+		</p>
+		<p>
+			<input type="text" name="id_number" id="id_number" class="boxes" placeholder="Identification number">
+		</p>
+		<p>
+			<input type="email" name="email" id="email" class="boxes" placeholder="Email">
+		</p>
+		<p>
+			<input type="password" name="password" id="password" class="boxes" placeholder="Password">
+		</p>
+		<p>
+			<input type="password" name="r_password" id="r_password" class="boxes" placeholder="Repeat password">
+		</p>
+		<div class="cont_btn_login">
+			<div class="cont_aux_btn_login">
+				<p id="arrow">🡢</p>
+				<button id="submit">Sign up</button>
+			</div>
+		</div>
+		<div id="final_txt">
+			<p id="without_account">Already have an account?</p>
+			<a href="Login-general.html" class="btn-log-sign"><b>Log in</b></a>
+		</div>
+	</form>
 
 </body>
+
 </html>
