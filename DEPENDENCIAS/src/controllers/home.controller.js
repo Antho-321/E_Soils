@@ -1,6 +1,12 @@
 import {pool} from '../db.js';
 import pkg from 'body-parser';
 import express from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const { json, urlencoded } = pkg;
 const app = express();
 app.use(json());
@@ -15,31 +21,40 @@ export const PostRegistro_Suelos = async(req, res) => {
 
 };
 
-export const postRegistro_Usuario = async(req, res) => {
+var x;
+
+export const postRegistro_Usuario1 = async(req, res) => {
     try {
-        const {
-            id_number, name, surname, email, password
-        } = req.body;
-
-        const resultado = await pool.query(`
-        INSERT INTO clientes (
-            idcli, names_, surnamecli, emailcli, passwordcli) 
-            
-        VALUES ($1, $2, $3, $4, $5) 
-        RETURNING *`,
-
-            [
-                id_number, name, surname, email, password
-            ]
-        );
-
-        if (resultado) return res.status(200).json(resultado.rows[0])
-
+x=[req.body.id_number,req.body.name, req.body.surname, req.body.email, req.body.password];
+res.redirect('/postRegistro_Usuario2');
     } catch (error) {
         console.error("Error en la consulta:", error);
         throw error;
     }
 };
+
+export const postRegistro_Usuario2 = async(req, res) => {
+
+    try {
+        res.redirect('http://127.0.0.1:5500/PAGINAS/Sign-up-2.html');
+console.log("test2: "+x[0]);
+    } catch (error) {
+        console.error("Error en la consulta:", error);
+        throw error;
+    }
+    console.log(x[0]);
+}
+
+export const postRegistro_Usuario3 = async(req, res) => {
+const resultado = await pool.query(`
+    INSERT INTO clientes (
+        idcli, names_, surnamecli, emailcli, passwordcli) 
+        
+    VALUES ('${x[0]}', '${x[1]}', '${x[2]}', '${x[3]}', '${x[4]}')`
+    );
+
+    if (resultado) return res.status(200).json(resultado.rows[0])
+}
 
 // Manejo de la solicitud POST para obtener los datos del formulario Propiedades Físicas
 export const postFisicas = async (req, res) =>
