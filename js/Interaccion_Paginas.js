@@ -27,4 +27,8 @@ function nuevoregistro() {
     window.location.href = "Photo_Location.html";
 }
 
+function aboutus() {
+    window.location.href = "About_us.html";
+}
+
 

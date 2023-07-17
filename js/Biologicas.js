@@ -1,4 +1,4 @@
-//Necesario para el Ajax de el formulario biológicas
+//Necesario para que lo haga en segundo plano
 $(document).ready(function() {
     $('#macroinvertebrateForm').submit(function(event) {
       event.preventDefault(); // Evitar el envío del formulario por defecto
