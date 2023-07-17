@@ -1,6 +1,6 @@
-import app from '../app.js';
 import {pool} from '../db.js';
 import pkg from 'body-parser';
+import express from 'express';
 const { json, urlencoded } = pkg;
 const app = express();
 app.use(json());
@@ -11,7 +11,7 @@ export const rutaPricipal = async(req,res) => {
         res.json(resultadopeticion)
 };
 
-export const postRegistro_Suelos = async(req, res) => {
+export const PostRegistro_Suelos = async(req, res) => {
 
 };
 
@@ -22,7 +22,7 @@ export const postRegistro_Usuario = async(req, res) => {
         } = req.body;
 
         const resultado = await pool.query(`
-        INSERT INTO physical_properties (
+        INSERT INTO clientes (
             idcli, names_, surnamecli, emailcli, passwordcli) 
             
         VALUES ($1, $2, $3, $4, $5) 
