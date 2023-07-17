@@ -1,91 +1,116 @@
 <!doctype html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<title>Edit Profile</title>
+	<meta charset="utf-8">
+	<title>Edit Profile</title>
 	<link rel="stylesheet" href="../ESTILOS/Estilo_EditProfile.css">
+	<link rel="stylesheet" href="../ESTILOS/Estilo_Index.css">
 </head>
 
 <body id="idbody">
-
-	  <div class="profile">
-		<div class="content">
-			
-		  	<div class="text">
-				<h1 class="titulo"><strong>Edit Profile</strong></h1>
-		 		<h2 class="titulo"> Profile Photo</h2>
+	<header class="Header">
+		<img src="../IMAGENES/Logo.png" width="168.32" height="154" alt="Logo ESoils" class="Logo" />
+		<ul class="menu">
+			<div id="cont_menu">
+				<li class="Boton_nav" onclick="home()"><img src="../VECTORES/Ícono_home.svg" width="58" height="50"
+						alt="" class="img_navigation" />HOME</li>
+				<li class="Boton_nav" onclick="mis_registros()"><img src="../VECTORES/registration.svg" width="46"
+						height="50" alt="Registros" class="img_navigation" /> MY REGISTERS</li>
+				<li class="Boton_nav" onclick="busqueda()"><img src="../VECTORES/imagen_2023-06-29_105553808.svg"
+						width="50" height="50" alt="Búsqueda" class="img_navigation">SEARCH</li>
 			</div>
-		  <form action="http://localhost:3000/postEditProfile" method="" id="formEditProfile">
-			  <div class="classimage">
-			  	<img src="../images/Profile Photo.png" alt="Profile Photo">
-			  	
-			  </div>
-			  		 
-			  <div class="uploadbuton">
-			  	  <label for="file-upload" class="custom-file-upload">
-				  <span>Upload Photo</span>
-				  </label>
-				  <input id="file-upload" class="file" type="file" name="picture" accept="image/*">
-			  </div>
 
-			  <div class="classul">
-			  	<ul class="ul1">
-					<li>
-						<label for="DocumenIdentification">Document Identification</label>
-
-					</li> 
-					 <li>
-						<label for="Email">Email</label>
-					 </li>
-					 <li>
-						<label for="newname">New Name</label>
-					 </li>
-					 <li>
-						<label for="newlastname">New Last Name</label>
-					 </li>
-					 <li>
-						<label for="password">New Password</label>
-					 </li>
-					 <li>
-						<label for="rpassword">Repeat New Password</label>
-
-					 </li>
-				  </ul>
-
-				  <ul class="ul2">
-					  <li>
-						  
-						<div class="noeditables">
-						  <label  name="idcli" for="DI">1002003000</label>
-						  <label name="emailcli" for="Email">example@example.com</label>
-						</div>
-					</li> 
-
-					 <li>
-						<input type="text" name="names_" placeholder="Jorge Rafael">					
-					 </li>
-					 <li>
-						 <input type="text" name="surname" placeholder="Rosero">		
-					 </li>
-					 <li>
-						<input type="password" name="passwordcli">
-					 </li>
-					 <li>
-						 <input type="password" name="npassword">
-					 </li>
-				  </ul>
-			  </div>
-			  
-			  <div class="botones">
-				  <a class="css-boton cancelar" href="#">Cancel</a>
-				  <!--input class = "css-boton save" type="submit" value="Save Changes"-->
-				  <button class = "css-boton save" type="submit">Save Changes</button>
-			  </div>
-			  
-		  </form>
+		</ul>
+		<div class="Header_loguear">
+			<div class="log" onclick="login()">
+				<div class="Boton_log"> <strong> LOG IN</strong><strong>&nbsp; </strong></div>
+			</div>
+			<div class="Log" onclick="signin()">
+				<div class="Boton_log" id="Registrarse"><strong> SIGN IN </strong> </div>
+			</div>
 		</div>
-	  </div>
+	</header>
+	<div class="separador"></div>
+	<div class="profile">
+		<div class="content">
 
+			<div class="text">
+				<h1 class="titulo"><strong>Edit Profile</strong></h1>
+				<h2 class="titulo"> Profile Photo</h2>
+			</div>
+			<form action="http://localhost:3000/postEditProfile" method="" id="formEditProfile">
+				<div class="classimage">
+					<img src="../images/Profile Photo.png" alt="Profile Photo">
 
+				</div>
+
+				<div class="uploadbuton">
+					<label for="file-upload" class="custom-file-upload">
+						<span>Upload Photo</span>
+					</label>
+					<input id="file-upload" class="file" type="file" name="picture" accept="image/*">
+				</div>
+
+				<div class="classul">
+					<ul class="ul1">
+						<li>
+							<label for="DocumenIdentification">Document Identification</label>
+
+						</li>
+						<li>
+							<label for="Email">Email</label>
+						</li>
+						<li>
+							<label for="newname">New Name</label>
+						</li>
+						<li>
+							<label for="newlastname">New Last Name</label>
+						</li>
+						<li>
+							<label for="password">New Password</label>
+						</li>
+						<li>
+							<label for="rpassword">Repeat New Password</label>
+
+						</li>
+					</ul>
+
+					<ul class="ul2">
+						<li>
+
+							<div class="noeditables">
+								<label name="idcli" for="DI">1002003000</label>
+								<label name="emailcli" for="Email">example@example.com</label>
+							</div>
+						</li>
+
+						<li>
+							<input type="text" name="names_" placeholder="Jorge Rafael">
+						</li>
+						<li>
+							<input type="text" name="surname" placeholder="Rosero">
+						</li>
+						<li>
+							<input type="password" name="passwordcli">
+						</li>
+						<li>
+							<input type="password" name="npassword">
+						</li>
+					</ul>
+				</div>
+
+				<div class="botones">
+					<a class="css-boton cancelar" href="#">Cancel</a>
+					<!--input class = "css-boton save" type="submit" value="Save Changes"-->
+					<button class="css-boton save" type="submit">Save Changes</button>
+				</div>
+
+			</form>
+		</div>
+	</div>
+
+	<script src="../js/Interaccion_Paginas.js"></script>
 </body>
+
 </html>
