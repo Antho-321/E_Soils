@@ -2,8 +2,7 @@ import { Router } from "express";
 const router = Router();
 
 
-import { rutaPricipal, postFisicas, PostRegistro_Suelos, postQuimicas, postClasification,
- } from "../controllers/home.controller.js";
+import { rutaPricipal, postFisicas, PostRegistro_Suelos, postQuimicas, postClasification, postRegistro_Usuario2, postRegistro_Usuario1 } from "../controllers/home.controller.js";
 router.get('/',rutaPricipal);
 
 router.post('/postRegistro_Usuario2', postRegistro_Usuario2);
