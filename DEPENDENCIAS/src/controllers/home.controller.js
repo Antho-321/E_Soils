@@ -1,11 +1,11 @@
-import {pool} from '../db.js';
+import { pool } from '../db.js';
 import pkg from 'body-parser';
 import express from 'express';
 
 import nodemailer from 'nodemailer';
-import {google} from 'googleapis';
+import { google } from 'googleapis';
 
-var x;
+var x, email_;
 const { json, urlencoded } = pkg;
 const app = express();
 app.use(json());
@@ -18,64 +18,66 @@ const oauth2Client = new google.auth.OAuth2(
     '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',
     // Redirect URL
     'https://developers.google.com/oauthplayground'
-  );
-  
-  // Set credentials and tokens
-  oauth2Client.setCredentials({
+);
+
+// Set credentials and tokens
+oauth2Client.setCredentials({
     refresh_token: '1//04Hz1-w1t4AZYCgYIARAAGAQSNgF-L9IrZq0eFKH8TCicplSYTlYrF3w24s6BuuD__COV3jr8fmtimlzWQFT8DLWqocg_0OReJg'
-  });
-  
-  // Create transporter object
-  const transporter = nodemailer.createTransport({
+});
+
+// Create transporter object
+const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      type: 'OAuth2',
-      user: 'esoils.inc@gmail.com',
-      clientId: oauth2Client._clientId,
-      clientSecret: oauth2Client._clientSecret,
-      refreshToken: oauth2Client.credentials.refresh_token,
-      accessToken: oauth2Client.credentials.access_token,
-      expires: oauth2Client.credentials.expiry_date
+        type: 'OAuth2',
+        user: 'esoils.inc@gmail.com',
+        clientId: oauth2Client._clientId,
+        clientSecret: oauth2Client._clientSecret,
+        refreshToken: oauth2Client.credentials.refresh_token,
+        accessToken: oauth2Client.credentials.access_token,
+        expires: oauth2Client.credentials.expiry_date
     }
-  });
+});
 
-export const rutaPricipal = async(req,res) => {
+export const rutaPricipal = async (req, res) => {
     const resultadopeticion = await pool.query("SELECT * FROM clientes");
-        res.json(resultadopeticion)
+    res.json(resultadopeticion)
 };
 
-export const PostRegistro_Suelos = async(req, res) => {
+export const PostRegistro_Suelos = async (req, res) => {
 
 };
 
-export const postRegistro_Usuario1 = async(req, res) => {
+export const postRegistro_Usuario1 = async (req, res) => {
     try {
-x=[req.body.id_number,req.body.name, req.body.surname, req.body.email, req.body.password];
-const emailTemplate = {
-    from: 'esoils.inc@gmail.com',
-    to: 'anthonyluisluna225@gmail.com',
-    subject: 'Hello from Nodemailer',
-    text: 'This is a test email sent by Nodemailer.',
-    html: '<p>This is a test email sent by <b>Nodemailer</b>.</p>'
-  };
-  
-  // Send email
-  transporter.sendMail(emailTemplate, (err, info) => {
-    if (err) {
-      console.error(err);
-    } else {
-      console.log('Email sent: ' + info.response);
-    }
-  });
-res.redirect('http://127.0.0.1:5500/PAGINAS/Sign-up-2.html');
+        email_= req.body.email;
+        x = [req.body.id_number, req.body.name, req.body.surname, email_, req.body.password];      
+        const emailTemplate = {
+            from: 'esoils.inc@gmail.com',
+            to: email_,
+            subject: 'Hello from Nodemailer',
+            text: 'This is a test email sent by Nodemailer.',
+            html: '<p>This is a test email sent by <b>Nodemailer</b>.</p>'
+        };
+
+        // Send email
+        transporter.sendMail(emailTemplate, (err, info) => {
+            if (err) {
+                console.error(err);
+            } else {
+                console.log('Email sent: ' + info.response);
+                res.redirect('http://127.0.0.1:5500/PAGINAS/Sign-up-2.html');
+            }
+        });
+        
     } catch (error) {
         console.error("Error en la consulta:", error);
         throw error;
     }
 };
 
-export const postRegistro_Usuario2 = async(req, res) => {
-const resultado = await pool.query(`
+export const postRegistro_Usuario2 = async (req, res) => {
+    const resultado = await pool.query(`
     INSERT INTO clientes (
         idcli, names_, surnamecli, emailcli, passwordcli)        
     VALUES ('${x[0]}', '${x[1]}', '${x[2]}', '${x[3]}', '${x[4]}')`
@@ -85,15 +87,14 @@ const resultado = await pool.query(`
 }
 
 // Manejo de la solicitud POST para obtener los datos del formulario Propiedades Físicas
-export const postFisicas = async (req, res) =>
-{
+export const postFisicas = async (req, res) => {
     try {
         const {
-        apparent_density, real_density, relative_density, maximum_dry_density,compressive_strength,
-        thermal_conductivity, liquid, plastic, silt, clay,
-        gravel, sand, optimum_moisture_content, plasticity_index, grain_size,
-        water_content, color, tensile_strength, porosity, initial_moisture,
-        earring, ground_altitude, average_temperature, rainfall_regime
+            apparent_density, real_density, relative_density, maximum_dry_density, compressive_strength,
+            thermal_conductivity, liquid, plastic, silt, clay,
+            gravel, sand, optimum_moisture_content, plasticity_index, grain_size,
+            water_content, color, tensile_strength, porosity, initial_moisture,
+            earring, ground_altitude, average_temperature, rainfall_regime
         } = req.body;
 
         // Parsear los valores a float
@@ -151,14 +152,13 @@ export const postFisicas = async (req, res) =>
 }
 
 // Manejo de la solicitud POST para obtener los datos del formulario Propiedades Quimicas
-export const postQuimicas = async (req, res) =>
-{
+export const postQuimicas = async (req, res) => {
     try {
         const {
-        alkalinity_or_acidity, organic_material, total_phosphorus,
-        extractable_sulfur, interchangeable_aluminum, electric_conductivity, exchangeable_calcium,
-        exchangeable_magnesium,exchangeable_potassium,exchangeable_sodium,extractable_copper,
-        removable_iron,extractable_manganese,extractable_zinc, boron
+            alkalinity_or_acidity, organic_material, total_phosphorus,
+            extractable_sulfur, interchangeable_aluminum, electric_conductivity, exchangeable_calcium,
+            exchangeable_magnesium, exchangeable_potassium, exchangeable_sodium, extractable_copper,
+            removable_iron, extractable_manganese, extractable_zinc, boron
         } = req.body;
 
         // Parsear los valores a float
@@ -178,7 +178,7 @@ export const postQuimicas = async (req, res) =>
         const extractable_zinc1 = parseFloat(extractable_zinc);
         const boron1 = parseFloat(boron);
 
-        console.log("El tipo es   ",boron1);
+        console.log("El tipo es   ", boron1);
 
         const resultado = await pool.query(`
         INSERT INTO chemical_properties (
@@ -193,8 +193,8 @@ export const postQuimicas = async (req, res) =>
             [
                 alkalinity_or_acidity1, organic_material1, total_phosphorus1,
                 extractable_sulfur1, interchangeable_aluminum1, electric_conductivity1, exchangeable_calcium1,
-                exchangeable_magnesium1,exchangeable_potassium1,exchangeable_sodium1,extractable_copper1,
-                removable_iron1,extractable_manganese1,extractable_zinc1, boron1
+                exchangeable_magnesium1, exchangeable_potassium1, exchangeable_sodium1, extractable_copper1,
+                removable_iron1, extractable_manganese1, extractable_zinc1, boron1
             ]
         );
 
