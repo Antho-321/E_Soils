@@ -6,7 +6,7 @@
 </head>
 <link rel="stylesheet" href="../ESTILOS/Estilo_FinalizacionDelRegistro.css">
 <body>
-	<form action="">
+	<form action="http://localhost:3000/postClasification" method="post">
         <div class="titles">
             <h1>Registration Completion</h1>
             <h2>Soil Classification</h2>
@@ -26,7 +26,7 @@
             </div>
     
             <div class="selectclass">
-                <select id="opOrden" class="opciones">
+                <select id="opOrden" name ="orden" class="opciones">
                     <option value="Gelisol">Gelisol</option>
                     <option value="Histosol">Histosol</option>
                     <option value="Spodosol">Spodosol</option> 
@@ -41,11 +41,12 @@
                     <option value="Entisol">Entisol</option>
                 </select>
                 <br>
-                <select id="opSuborden" class="opciones">        
+
+                <select id="opSuborden" name="suborden" class="opciones">        
                 </select>      
                 
                 <div id="granGrupo">
-                    <select name="select" id="opGranGrupo" class="opciones">         
+                    <select name="ggroup" id="opGranGrupo" class="opciones">         
                     </select>
                 </div> 
                 <div>
@@ -53,7 +54,7 @@
                 </div> 
                 
                 <div id="subGrupo">
-                    <select name="select" id="opSubGrupo" class="opciones">  
+                    <select name="sgroup" id="opSubGrupo" class="opciones">  
                     </select>
                 </div> 
                 <div>
@@ -74,7 +75,7 @@
             <h3 id="suelo"></h3>
         </div>
         <div class="btnfinal">
-            <input type="submit" value="Finalizar →" class="css-boton Finalizar">
+            <button type="submit" class="css-boton Finalizar">Finalizar →</button>
         </div>
     </form>
 </body>
