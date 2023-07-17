@@ -12,3 +12,5 @@ router.post('/postQuimicas', postQuimicas);
 router.post('/PostRegistro_Suelos', PostRegistro_Suelos);
 
 export default router;
+
+//funcional
