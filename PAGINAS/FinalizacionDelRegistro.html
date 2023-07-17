@@ -1,17 +1,41 @@
 <!doctype html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<title>Documento sin título</title>
+    <meta charset="utf-8">
+    <title>Documento sin título</title>
 </head>
 <link rel="stylesheet" href="../ESTILOS/Estilo_FinalizacionDelRegistro.css">
+<link rel="stylesheet" href="../ESTILOS/Estilo_Index.css">
 <body>
-	<form action="http://localhost:3000/postClasification" method="post">
+    <!-- <header class="Header">
+        <img src="../IMAGENES/Logo.png" width="168.32" height="154" alt="Logo ESoils" class="Logo" />
+        <ul class="menu">
+            <div id="cont_menu">
+                <li class="Boton_nav" onclick="home()"><img src="../VECTORES/Ícono_home.svg" width="58" height="50"
+                        alt="" class="img_navigation" />HOME</li>
+                <li class="Boton_nav" onclick="mis_registros()"><img src="../VECTORES/registration.svg" width="46"
+                        height="50" alt="Registros" class="img_navigation" /> MY REGISTERS</li>
+                <li class="Boton_nav" onclick="busqueda()"><img src="../VECTORES/imagen_2023-06-29_105553808.svg"
+                        width="50" height="50" alt="Búsqueda" class="img_navigation">SEARCH</li>
+            </div>
+
+        </ul>
+        <div class="Header_loguear">
+            <div class="log" onclick="login()">
+                <div class="Boton_log"> <strong> LOG IN</strong><strong>&nbsp; </strong></div>
+            </div>
+            <div class="Log" onclick="signin()">
+                <div class="Boton_log" id="Registrarse"><strong> SIGN IN </strong> </div>
+            </div>
+        </div>
+    </header> -->
+    <form action="http://localhost:3000/postClasification" method="post">
         <div class="titles">
             <h1>Registration Completion</h1>
             <h2>Soil Classification</h2>
         </div>
-        
+
         <div class="cuerpo">
             <div class="ordenes">
                 <h3>Order</h3>
@@ -19,22 +43,22 @@
                 <h3>Great Group</h3>
                 <h3>Sub Group</h3>
             </div>
-    
+
             <div class="inputs">
-                <input type="text" id="inputBuscarGranGrupo" placeholder="Search"/>
-                <input type="text" id="inputBuscarSubGrupo" placeholder="Search"/>
+                <input type="text" id="inputBuscarGranGrupo" placeholder="Search" />
+                <input type="text" id="inputBuscarSubGrupo" placeholder="Search" />
             </div>
-    
+
             <div class="selectclass">
-                <select id="opOrden" name ="orden" class="opciones">
+                <select id="opOrden" name="orden" class="opciones">
                     <option value="Gelisol">Gelisol</option>
                     <option value="Histosol">Histosol</option>
-                    <option value="Spodosol">Spodosol</option> 
+                    <option value="Spodosol">Spodosol</option>
                     <option value="Andisol">Andisol</option>
                     <option value="Oxisol">Oxisol</option>
                     <option value="Vertisol">Vertisol</option>
                     <option value="Aridisol">Aridisol</option>
-                    <option value="Ultisol">Ultisol</option> 
+                    <option value="Ultisol">Ultisol</option>
                     <option value="Mollisol">Mollisol</option>
                     <option value="Alfisol">Alfisol</option>
                     <option value="Inceptisol">Inceptisol</option>
@@ -42,36 +66,36 @@
                 </select>
                 <br>
 
-                <select id="opSuborden" name="suborden" class="opciones">        
-                </select>      
-                
+                <select id="opSuborden" name="suborden" class="opciones">
+                </select>
+
                 <div id="granGrupo">
-                    <select name="ggroup" id="opGranGrupo" class="opciones">         
+                    <select name="ggroup" id="opGranGrupo" class="opciones">
                     </select>
-                </div> 
+                </div>
                 <div>
                     <ul id="listGranGrupo"></ul>
-                </div> 
-                
+                </div>
+
                 <div id="subGrupo">
-                    <select name="sgroup" id="opSubGrupo" class="opciones">  
+                    <select name="sgroup" id="opSubGrupo" class="opciones">
                     </select>
-                </div> 
+                </div>
                 <div>
                     <ul id="listSubGrupo"></ul>
                 </div>
-    
+
             </div>
-    
+
             <div class="caracteristicas">
                 <h4 id="hOrden"></h4>
                 <h4 id="hSuborden"></h4>
                 <h4 id="hGranGrupo"></h4>
             </div>
         </div>
-        
+
         <div class="nombresuelo">
-            <h3 id="define">Classified soil is defined as  </h3>
+            <h3 id="define">Classified soil is defined as </h3>
             <h3 id="suelo"></h3>
         </div>
         <div class="btnfinal">
@@ -79,5 +103,6 @@
         </div>
     </form>
 </body>
-	<script src="../js/js_FinalizacionDelRegistro.js"></script>
+<script src="../js/js_FinalizacionDelRegistro.js"></script>
+
 </html>
