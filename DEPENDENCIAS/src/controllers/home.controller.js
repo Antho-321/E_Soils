@@ -2,11 +2,42 @@ import {pool} from '../db.js';
 import pkg from 'body-parser';
 import express from 'express';
 
+import nodemailer from 'nodemailer';
+import {google} from 'googleapis';
+
 var x;
 const { json, urlencoded } = pkg;
 const app = express();
 app.use(json());
 app.use(urlencoded({ extended: true }));
+
+const oauth2Client = new google.auth.OAuth2(
+    // Client ID
+    '991258058074-9ghhhbgfvpsm093kjk2e9jvk3s78h4ln.apps.googleusercontent.com',
+    // Client Secret
+    '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',
+    // Redirect URL
+    'https://developers.google.com/oauthplayground'
+  );
+  
+  // Set credentials and tokens
+  oauth2Client.setCredentials({
+    refresh_token: '1//04Hz1-w1t4AZYCgYIARAAGAQSNgF-L9IrZq0eFKH8TCicplSYTlYrF3w24s6BuuD__COV3jr8fmtimlzWQFT8DLWqocg_0OReJg'
+  });
+  
+  // Create transporter object
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      type: 'OAuth2',
+      user: 'esoils.inc@gmail.com',
+      clientId: oauth2Client._clientId,
+      clientSecret: oauth2Client._clientSecret,
+      refreshToken: oauth2Client.credentials.refresh_token,
+      accessToken: oauth2Client.credentials.access_token,
+      expires: oauth2Client.credentials.expiry_date
+    }
+  });
 
 export const rutaPricipal = async(req,res) => {
     const resultadopeticion = await pool.query("SELECT * FROM clientes");
@@ -20,6 +51,22 @@ export const PostRegistro_Suelos = async(req, res) => {
 export const postRegistro_Usuario1 = async(req, res) => {
     try {
 x=[req.body.id_number,req.body.name, req.body.surname, req.body.email, req.body.password];
+const emailTemplate = {
+    from: 'esoils.inc@gmail.com',
+    to: 'anthonyluisluna225@gmail.com',
+    subject: 'Hello from Nodemailer',
+    text: 'This is a test email sent by Nodemailer.',
+    html: '<p>This is a test email sent by <b>Nodemailer</b>.</p>'
+  };
+  
+  // Send email
+  transporter.sendMail(emailTemplate, (err, info) => {
+    if (err) {
+      console.error(err);
+    } else {
+      console.log('Email sent: ' + info.response);
+    }
+  });
 res.redirect('http://127.0.0.1:5500/PAGINAS/Sign-up-2.html');
     } catch (error) {
         console.error("Error en la consulta:", error);
