@@ -12,5 +12,4 @@ router.post('/postFisicas', postFisicas);
 router.post('/postQuimicas', postQuimicas);
 router.post('/postClasification', postClasification);
 
-
 export default router;
