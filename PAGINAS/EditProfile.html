@@ -9,6 +9,17 @@
 </head>
 
 <body id="idbody">
+	<header class="Header">
+		<img src="../IMAGENES/Logo.png" width="168.32" height="154" alt="Logo ESoils" class="Logo" />
+		<ul class="menu">
+			<div id="cont_menu">
+				<li class="Boton_nav" onclick="home()"><img src="../VECTORES/Ícono_home.svg" width="58" height="50"
+						alt="" class="img_navigation" />HOME</li>
+				<li class="Boton_nav" onclick="mis_registros()"><img src="../VECTORES/registration.svg" width="46"
+						height="50" alt="Registros" class="img_navigation" /> MY REGISTERS</li>
+				<li class="Boton_nav" onclick="busqueda()"><img src="../VECTORES/imagen_2023-06-29_105553808.svg"
+						width="50" height="50" alt="Búsqueda" class="img_navigation">SEARCH</li>
+			</div>
 
 		</ul>
 		<div class="Header_loguear">
@@ -41,10 +52,10 @@
 					<input id="file-upload" class="file" type="file" name="picture" accept="image/*">
 				</div>
 
-			  <div class="classul">
-			  	<ul class="ul1">
-					<li>
-						<label for="DocumenIdentification">Document Identification</label>
+				<div class="classul">
+					<ul class="ul1">
+						<li>
+							<label for="DocumenIdentification">Document Identification</label>
 
 						</li>
 						<li>
@@ -62,45 +73,44 @@
 						<li>
 							<label for="rpassword">Repeat New Password</label>
 
-					 </li>
-				  </ul>
+						</li>
+					</ul>
 
-				  <ul class="ul2">
-					  <li>
-						  
-						<div class="noeditables">
-						  <label  name="idcli" for="DI">1002003000</label>
-						  <label name="emailcli" for="Email">example@example.com</label>
-						</div>
-					</li> 
+					<ul class="ul2">
+						<li>
 
-					 <li>
-						<input type="text" name="names_" placeholder="Jorge Rafael">					
-					 </li>
-					 <li>
-						 <input type="text" name="surname" placeholder="Rosero">		
-					 </li>
-					 <li>
-						<input type="password" name="passwordcli">
-					 </li>
-					 <li>
-						 <input type="password" name="npassword">
-					 </li>
-				  </ul>
-			  </div>
-			  
-			  <div class="botones">
-				  <a class="css-boton cancelar" href="#">Cancel</a>
-				  <!--input class = "css-boton save" type="submit" value="Save Changes"-->
-				  <button class = "css-boton save" type="submit">Save Changes</button>
-			  </div>
-			  
-		  </form>
+							<div class="noeditables">
+								<label name="idcli" for="DI">1002003000</label>
+								<label name="emailcli" for="Email">example@example.com</label>
+							</div>
+						</li>
+
+						<li>
+							<input type="text" name="names_" placeholder="Jorge Rafael">
+						</li>
+						<li>
+							<input type="text" name="surname" placeholder="Rosero">
+						</li>
+						<li>
+							<input type="password" name="passwordcli">
+						</li>
+						<li>
+							<input type="password" name="npassword">
+						</li>
+					</ul>
+				</div>
+
+				<div class="botones">
+					<a class="css-boton cancelar" href="#">Cancel</a>
+					<!--input class = "css-boton save" type="submit" value="Save Changes"-->
+					<button class="css-boton save" type="submit">Save Changes</button>
+				</div>
+
+			</form>
 		</div>
-	</header>
-	<div class="separador"></div>
-	<div class="profile">
-		<div class="content">
+	</div>
 
+	<script src="../js/Interaccion_Paginas.js"></script>
 </body>
+
 </html>
