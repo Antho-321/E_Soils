@@ -52,8 +52,8 @@ export const rutaPricipal = async (req, res) => {
 export const postRegistro_Usuario1 = async (req, res) => {
     try {
         randomNumber = crypto.randomInt(10000, 100000);
-        email_= req.body.email;
-        usuario = [req.body.id_number, req.body.name, req.body.surname, email_, req.body.password, randomNumber];      
+        email_ = req.body.email;
+        usuario = [req.body.id_number, req.body.name, req.body.surname, email_, req.body.password, randomNumber];
         const emailTemplate = {
             from: 'esoils.inc@gmail.com',
             to: email_,
@@ -179,7 +179,7 @@ export const postRegistro_Usuario1 = async (req, res) => {
                                                                             <tbody>
                                                                                 <tr>
                                                                                     <td align="center" class="esd-block-text">
-                                                                                        <p style="font-family: Garamond, serif; font-size: 20px;"><b>`+usuario[5]+`</b></p>
+                                                                                        <p style="font-family: Garamond, serif; font-size: 20px;"><b>`+ usuario[5] + `</b></p>
                                                                                     </td>
                                                                                 </tr>
                                                                             </tbody>
@@ -253,17 +253,17 @@ export const postRegistro_Usuario1 = async (req, res) => {
                 console.error(err);
             } else {
                 console.log('Email sent: ' + info.response);
-                res.redirect('http://127.0.0.1:5500/PAGINAS/Sign-up-2.html?x='+usuario);
+                res.redirect('http://127.0.0.1:5500/PAGINAS/Sign-up-2.html?x=' + usuario);
             }
         });
-        
+
     } catch (error) {
         console.error("Error en la consulta:", error);
         throw error;
     }
 };
-export const postRegistro_Usuario2 = async(req, res) => {
-const resultado = await pool.query(`
+export const postRegistro_Usuario2 = async (req, res) => {
+    const resultado = await pool.query(`
     INSERT INTO clientes (
         idcli, names_, surnamecli, emailcli, passwordcli)        
     VALUES ('${usuario[0]}', '${usuario[1]}', '${usuario[2]}', '${usuario[3]}', '${usuario[4]}')`
@@ -275,8 +275,8 @@ const resultado = await pool.query(`
 
 
 // Manejo de la solicitud POST para obtener los datos del formulario Suelos
-export const exportIde_suelo = async(req, res, next) => {
-    try{
+export const exportIde_suelo = async (req, res, next) => {
+    try {
         suelo = generateUniqueID();
         res.redirect("http://127.0.0.1:5500/PAGINAS/Fisicas-1.html");
         res.redirect("http://127.0.0.1:5500/PAGINAS/Biologicas-1.html");
@@ -284,27 +284,27 @@ export const exportIde_suelo = async(req, res, next) => {
         res.redirect("http://127.0.0.1:5500/PAGINAS/FinalizacionDelRegistro.html");
 
     }
-    catch{
+    catch {
         console.error("Error en la consulta:", error);
         throw error;
     }
 }
-export const PostRegistro_Suelos = async(req, res) => {
+export const PostRegistro_Suelos = async (req, res) => {
     try {
         const {
             codprov, codcan, soil_picture
         } = req.body;
 
         var ide_suelo = generateUniqueID();
-        
+
         //var idcli = usuario[0];
         var idcli = "0401751227";
 
-        console.log("El tipo es   ",soil_picture);
+        console.log("El tipo es   ", soil_picture);
 
-        var codprov1  = parseFloat(codprov);
+        var codprov1 = parseFloat(codprov);
         var codcan1 = parseFloat(codcan);
-        
+
         //console.log(soil_picture);
 
         const resultado = await pool.query(`
@@ -318,7 +318,7 @@ export const PostRegistro_Suelos = async(req, res) => {
             ]
         );
 
-    if (resultado) return res.status(200).json(resultado.rows[0])
+        if (resultado) return res.status(200).json(resultado.rows[0])
 
     } catch (error) {
         console.error("Error en la consulta:", error);
@@ -450,21 +450,20 @@ export const postQuimicas = async (req, res) => {
 
 
 // Manejo de la solicitud POST para obtener los datos del formulario Propiedades Biologicas
-export const postBiologicas = async (req, res) =>
-{
+export const postBiologicas = async (req, res) => {
     try {
-        const {    
-        organisms_description,
-        microbial_activity,
-        microbial_intensity,
-        microbial_description,
-        biomass_method,
-        biomass_results,
-        biomass_description,
-        macroinvertebrates_description,
-        average_depth,
-        measurement_method,
-        additional_remarks,
+        const {
+            organisms_description,
+            microbial_activity,
+            microbial_intensity,
+            microbial_description,
+            biomass_method,
+            biomass_results,
+            biomass_description,
+            macroinvertebrates_description,
+            average_depth,
+            measurement_method,
+            additional_remarks,
         } = req.body;
 
         var ide_suelo = "SOILRRDSQw";
@@ -487,7 +486,7 @@ export const postBiologicas = async (req, res) =>
             [
                 ide_suelo, organisms_description, microbial_activity, microbial_intensity,
                 microbial_description, biomass_method, biomass_results1, biomass_description,
-                macroinvertebrates_description, average_depth1, measurement_method, 
+                macroinvertebrates_description, average_depth1, measurement_method,
                 additional_remarks
             ]
         );
@@ -501,8 +500,7 @@ export const postBiologicas = async (req, res) =>
 }
 
 // Manejo de la solicitud POST para obtener los datos del formulario Propiedades Biologicas1
-export const postBiologicasSub1 = async (req, res) =>
-{
+export const postBiologicasSub1 = async (req, res) => {
     try {
         console.log("------------------------------------------------");
         /*
@@ -535,12 +533,11 @@ export const postBiologicasSub1 = async (req, res) =>
 }
 
 // Manejo de la solicitud POST para obtener los datos del formulario Propiedades Biologicas1
-export const postBiologicas2 = async (req, res) =>
-{
+export const postBiologicas2 = async (req, res) => {
     try {
-        const {    
-        macroinvertebrates,
-        number_macroinvertebrates
+        const {
+            macroinvertebrates,
+            number_macroinvertebrates
         } = req.body;
 
         var ide_suelo = "SOILRRDSQw";
@@ -556,7 +553,7 @@ export const postBiologicas2 = async (req, res) =>
         VALUES ($1, $2, $3) 
         RETURNING *`,
             [
-                ide_suelo,  macroinvertebrates, number_macroinvertebrates1
+                ide_suelo, macroinvertebrates, number_macroinvertebrates1
             ]
         );
         if (resultado) return res.status(200).json(resultado.rows[0])
@@ -569,14 +566,13 @@ export const postBiologicas2 = async (req, res) =>
 
 
 // Manejo de la solicitud POST para obtener los datos del formulario Propiedades Quimicas
-export const postClasification = async (req, res) =>
-{
+export const postClasification = async (req, res) => {
     try {
         const {
             orden, suborden, ggroup, sgroup
         } = req.body;
 
-        console.log("El tipo es   ",orden);
+        console.log("El tipo es   ", orden);
 
         const resultado = await pool.query(`
         INSERT INTO clasification (
@@ -589,7 +585,7 @@ export const postClasification = async (req, res) =>
             ]
         );
 
-    if (resultado) return res.status(200).json(resultado.rows[0])
+        if (resultado) return res.status(200).json(resultado.rows[0])
 
     } catch (error) {
         console.error("Error en la consulta:", error);
@@ -603,14 +599,13 @@ export const postClasification = async (req, res) =>
 
 
 // Manejo de la solicitud POST para obtener los datos del formulario Propiedades Quimicas
-export const postEditProfile = async (req, res) =>
-{
+export const postEditProfile = async (req, res) => {
     try {
-        const {idcli, 
+        const { idcli,
             picture, names_, surname, emailcli, passwordcli
         } = req.body;
 
-        console.log("El tipo es   ",picture);
+        console.log("El tipo es   ", picture);
 
         const resultado = await pool.query(`
         UPDATE INTO clientes (
@@ -625,7 +620,7 @@ export const postEditProfile = async (req, res) =>
             ]
         );
 
-    if (resultado) return res.status(200).json(resultado.rows[0])
+        if (resultado) return res.status(200).json(resultado.rows[0])
 
     } catch (error) {
         console.error("Error en la consulta:", error);
@@ -636,21 +631,76 @@ export const postEditProfile = async (req, res) =>
 
 /*FUNCIÓN PARA GENERAR UN NUEVO ID QUE NO SE REPITA NUNCA LA DEJAN QUIETA QUE ES PARA EL SUELO*/
 function generateUniqueID() {
-  // Caracteres permitidos para la generación del ID
-  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    // Caracteres permitidos para la generación del ID
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
-  // Longitud deseada del ID
-  const idLength = 6;
+    // Longitud deseada del ID
+    const idLength = 6;
 
-  let result = '';
-  for (let i = 0; i < idLength; i++) {
-    // Generar un índice aleatorio para obtener un carácter de la cadena de caracteres
-    const randomIndex = Math.floor(Math.random() * characters.length);
-    result += characters.charAt(randomIndex);
-  }
+    let result = '';
+    for (let i = 0; i < idLength; i++) {
+        // Generar un índice aleatorio para obtener un carácter de la cadena de caracteres
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        result += characters.charAt(randomIndex);
+    }
 
-  return "SOIL"+result;
+    return "SOIL" + result;
 }
 //#endregion
 ////////////////////////////////////////////////
 //Intento para hacer el login
+export const postIdUser = async (req, res) => {
+    try {
+        const {
+            idcli, passwordcli
+        } = req.body;
+
+        const resultado = await pool.query(`
+        SELECT verificar($1,$2);`,
+            [
+                idcli, passwordcli
+            ]
+        );
+        const id_user = resultado.rows[0].verificar;
+        if (id_user != null) {
+            //redireccionar a indexhtml
+        } else {
+            //regresa al login
+        }
+    } catch (error) {
+        console.error("Error en la consulta:", error);
+        throw error;
+    }
+}
+
+
+
+/////////////////////////////////////////////////////
+///////////Posible_codigo///////////////////////////
+// export const postIdUser = async (req, res) => {
+//     try {
+//         const { idcli, passwordcli } = req.body;
+
+//         console.log(idcli, passwordcli);
+//         const resultado = await pool.query(
+//             `
+//         SELECT verificar($1, $2);
+//       `,
+//             [idcli, passwordcli]
+//         );
+//         const id_user = resultado.rows[0].verificar;
+
+//         // Almacena el ID del usuario en la sesión
+//         if (id_user != null) {
+//             req.session.id_user = id_user;
+//             //redireccionar a indexhtml
+//         } else {
+//             //regresa al login
+//         }
+        
+        
+//     } catch (error) {
+//         console.error("Error en la consulta:", error);
+//         throw error;
+//     }
+// }

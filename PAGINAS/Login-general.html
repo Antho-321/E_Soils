@@ -1,35 +1,40 @@
 <!doctype html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<title>Documento sin título</title>
-<link href="../ESTILOS/Estilo_login-general.css" rel="stylesheet" type="text/css">
+	<meta charset="utf-8">
+	<title>Documento sin título</title>
+	<link href="../ESTILOS/Estilo_login-general.css" rel="stylesheet" type="text/css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@150&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@150&display=swap" rel="stylesheet">
 </head>
 
 <body>
-<div class="esp_img"><img src="../IMAGENES/Logo-version2.png" width="230" alt=""/>
-	<h1><b>Log	in</b></h1>
-	<p>
-		<input type="text" name="id_number" id="id_number" class="boxes" placeholder="Identification number">
-	</p>
-	<p>
-	  <input type="password" name="password" id="password" class="boxes" placeholder="Password">
-	</p>
-	<p id="cont_recover_account"><a href="Recover-account-general.html" id="recover_account">Forgot password?</a></p>
-    <div class="cont_btn_login">
-		<div class="cont_aux_btn_login">
-			<p id="arrow">🡢</p>
-			  <button id="submit">Log in</button>
-		</div>	
-    </div>
-	<div id="final_txt">
-		<p id="without_account">Don't have an account?</p>
-		<a href="Sign-up-1.html" class="btn-log-sign"><b>Sign up</b></a>
+	<div class="esp_img"><img src="../IMAGENES/Logo-version2.png" width="230" alt="" />
+		<h1><b>Log in</b></h1>
+		<form action="http://localhost:3000/login" method="post">
+			<p>
+				<input type="text" name="idcli" id="email" class="boxes" placeholder="Email">
+			</p>
+			<p>
+				<input type="password" name="passwordcli" id="password" class="boxes" placeholder="Password">
+			</p>
+			<p id="cont_recover_account"><a href="Recover-account-general.html" id="recover_account">Forgot
+					password?</a></p>
+			<div class="cont_btn_login">
+				<div class="cont_aux_btn_login">
+					<p id="arrow">🡢</p>
+					<button id="submit">Log in</button>
+				</div>
+			</div>
+		</form>
+		<div id="final_txt">
+			<p id="without_account">Don't have an account?</p>
+			<a href="Sign-up-1.html" class="btn-log-sign"><b>Sign up</b></a>
+		</div>
 	</div>
-</div>
 
 </body>
+
 </html>
