@@ -8,12 +8,14 @@ router.get('/',rutaPricipal);
 
 router.post('/postRegistro_Usuario2', postRegistro_Usuario2);
 router.post('/postRegistro_Usuario1', postRegistro_Usuario1);
-router.post('/PostRegistro_Suelos', PostRegistro_Suelos);
 router.post('/postFisicas', postFisicas);
 router.post('/postQuimicas', postQuimicas);
 router.post('/postBiologicas', postBiologicas);
 router.post('/postBiologicasSub1', postBiologicasSub1);
 router.post('/postBiologicas2', postBiologicas2);
+router.post('/PostRegistro_Suelos', PostRegistro_Suelos);
 router.post('/postClasification', postClasification);
 
 export default router;
+
+//funcional
