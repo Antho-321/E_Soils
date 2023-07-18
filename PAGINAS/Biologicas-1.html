@@ -38,7 +38,7 @@
     </div>
   </header>
   <section class="Data">
-    <form action="" method="post">
+    <form action="http://localhost:3000/postBiologicas" method="post" id="formPrincipal">
       <h1 class="Titulo_propiedades">Biological Properties</h1>
       <div class="form-step form-step-active">
 
@@ -67,13 +67,14 @@
           <th colspan="4"></th>
         </tr>
         <tr>
-          <!--form action="" method=""-->
-          <th>Types of organisms present</th>
-          <td><input type="text" name="organism" class="valores txt_value_biological" id ="organismsPresent" placeholder="(Worms, nematodes, etc.)"></td>
-          <th>Quantity</th>
-          <td><input type="number" name="number_organism" id="numOrganisms" class="valores"></td>
-          <td><button id="btnAddOrganisms" class="submit btn_añadir">Add</button> </td>
-          <!--/!--form-->
+          <form name="formSec1" action="http://localhost:3000/postBiologicasSub1" method="post" id="formSecund1">
+            <th>Types of organisms present</th>
+            <td><input type="text" name="organism" class="valores txt_value_biological" id ="organismsPresent" placeholder="(Worms, nematodes, etc.)"></td>
+            <th>Quantity</th>
+            <td><input type="number" name="number_organism" id="numOrganisms" class="valores" min="1"></td>
+            <td><button type="submit" class="submit btn_añadir">Add</button> </td>
+          </form>
+          
         </tr>
         <tr>
           <th class="td_top">Additional remarks</th>
@@ -198,17 +199,17 @@
               <th colspan="4"></th>
             </tr>
             <tr>
-              <!--form action=""-->
-              <th>Types of macroinvertebrates</th>
-              <td><input type="text" name="macroinvertebrates" class="valores txt_value_biological" placeholder="(Beetles, mealybugs, etc.)"></td>
-              <th>Quantity</th>
-              <td><input type="number" name="number_macroinvertebrates" class="valores"></td>
-              <td><button class="submit btn_añadir">Add</button></td>
-              <!--/!--form-->
+              <form action="http://localhost:3000/postBiologicas2" method="post" id="formSec2">
+                <th>Types of macroinvertebrates</th>
+                <td><input type="text" id="macroinvertebrates" name="macroinvertebrates" class="valores txt_value_biological" placeholder="(Beetles, mealybugs, etc.)"></td>
+                <th>Quantity</th>
+                <td><input type="number" id="numInvertebrates" name="number_macroinvertebrates" class="valores" min="1"></td>
+                <td><button type="submit" class="submit btn_añadir">Add</button></td>
+              </form>
             </tr>
             <tr>
               <th class="td_top">Additional remarks</th>
-              <td colspan="3"><textarea class="valores txtarea_biological" name="macroinvertebrates_description"
+              <td colspan="3"><textarea  id="txtMacroinvertebrates" class="valores txtarea_biological" name="macroinvertebrates_description"
                   placeholder="(“Macroinvertebrates were mostly found on the surface....”)"></textarea></td>
               <td></td>
             </tr>
@@ -280,6 +281,6 @@
 </body>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="../js/Interaccion_Paginas.js"></script>
-	<script src="../js/fisicas.js"></script>
   <script src="../js/btnAddBiologicas.js"></script>
+  <script src="../js/fisicas.js"></script>
 </html>

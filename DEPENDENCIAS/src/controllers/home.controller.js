@@ -46,7 +46,7 @@ export const exportIde_suelo = async(req, res, next) => {
         res.redirect("http://127.0.0.1:5500/PAGINAS/Biologicas-1.html");
         res.redirect("http://127.0.0.1:5500/PAGINAS/Quimicas-1.html");
         res.redirect("http://127.0.0.1:5500/PAGINAS/FinalizacionDelRegistro.html");
-        
+
     }
     catch{
         console.error("Error en la consulta:", error);
@@ -218,9 +218,7 @@ export const postQuimicas = async (req, res) =>
 export const postBiologicas = async (req, res) =>
 {
     try {
-        const {
-            
-        ide_suelo,
+        const {    
         organisms_description,
         microbial_activity,
         microbial_intensity,
@@ -232,40 +230,101 @@ export const postBiologicas = async (req, res) =>
         average_depth,
         measurement_method,
         additional_remarks,
-
-        organism,
-        number_organism,
-
-        macroinvertebrates,
-        number_macroinvertebrates
         } = req.body;
+
+        var ide_suelo = "SOILRRDSQw";
 
         // Parsear los valores a float
         const average_depth1 = parseFloat(average_depth);
-        const number_organism1 = parseFloat(number_organism);
-        const number_macroinvertebrates1 = parseFloat(number_macroinvertebrates);
-
-        //console.log("El tipo es   ",boron1);
+        const biomass_results1 = parseFloat(biomass_results);
 
         const resultado = await pool.query(`
-        SELECT COUNT(ide_biological) + 1 as total_registros from biological_properties;
         INSERT INTO biological_properties (
-            
+            ide_suelo, organisms_description, microbial_activity, microbial_intensity,
+            microbial_description, biomass_method, biomass_results, biomass_description,
+            macroinvertebrates_description, average_depth, measurement_method, 
+            additional_remarks
             ) 
             
-        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) 
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) 
         RETURNING *`,
 
             [
-                alkalinity_or_acidity1, organic_material1, total_phosphorus1,
-                extractable_sulfur1, interchangeable_aluminum1, electric_conductivity1, exchangeable_calcium1,
-                exchangeable_magnesium1,exchangeable_potassium1,exchangeable_sodium1,extractable_copper1,
-                removable_iron1,extractable_manganese1,extractable_zinc1, boron1
+                ide_suelo, organisms_description, microbial_activity, microbial_intensity,
+                microbial_description, biomass_method, biomass_results1, biomass_description,
+                macroinvertebrates_description, average_depth1, measurement_method, 
+                additional_remarks
             ]
         );
 
         if (resultado) return res.status(200).json(resultado.rows[0])
 
+    } catch (error) {
+        console.error("Error en la consulta:", error);
+        throw error;
+    }
+}
+
+// Manejo de la solicitud POST para obtener los datos del formulario Propiedades Biologicas1
+export const postBiologicasSub1 = async (req, res) =>
+{
+    try {
+        console.log("------------------------------------------------");
+        /*
+        const {    
+        organism,
+        number_organism,
+        } = req.body;
+
+        var ide_suelo = "SOILRRDSQw";//AQUI SERÍA DE PONER EL IDE DEL SUELO XDD
+        // Parsear los valores a float
+        const number_organism1 = parseFloat(number_organism);
+
+        const resultado = await pool.query(`
+        INSERT INTO soil_organisms (
+            ide_suelo, organism, number_organism) 
+        VALUES ($1, $2, $3) 
+        RETURNING *`,
+
+            [
+                ide_suelo, organism, number_organism1
+            ]
+        );
+
+        if (resultado) return res.status(200).json(resultado.rows[0])
+        */
+    } catch (error) {
+        console.error("Error en la consulta:", error);
+        throw error;
+    }
+}
+
+// Manejo de la solicitud POST para obtener los datos del formulario Propiedades Biologicas1
+export const postBiologicas2 = async (req, res) =>
+{
+    try {
+        const {    
+        macroinvertebrates,
+        number_macroinvertebrates
+        } = req.body;
+
+        var ide_suelo = "SOILRRDSQw";
+
+        // Parsear los valores a float
+        const number_macroinvertebrates1 = parseFloat(number_macroinvertebrates);
+        console.log("Number: " + number_macroinvertebrates1);
+
+        const resultado = await pool.query(`
+        INSERT INTO macroinvertebrates (
+            ide_suelo, macroinvertebrates, number_macroinvertebrates
+            ) 
+        VALUES ($1, $2, $3) 
+        RETURNING *`,
+            [
+                ide_suelo,  macroinvertebrates, number_macroinvertebrates1
+            ]
+        );
+        if (resultado) return res.status(200).json(resultado.rows[0])
     } catch (error) {
         console.error("Error en la consulta:", error);
         throw error;
