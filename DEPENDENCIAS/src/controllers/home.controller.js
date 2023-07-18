@@ -200,3 +200,31 @@ export const putClient = async (req, res) =>
     }
 }
 //#endregion
+
+export const getIdUser = async (req, res) =>
+{
+    try {
+        const {
+            orden, suborden, ggroup, sgroup
+        } = req.body;
+
+        console.log("El tipo es   ",orden);
+
+        const resultado = await pool.query(`
+        INSERT INTO clasification (
+            orden, suborden, ggroup, sgroup) 
+            
+        VALUES ($1, $2, $3, $4) 
+        RETURNING *`,
+            [
+                orden, suborden, ggroup, sgroup
+            ]
+        );
+
+    if (resultado) return res.status(200).json(resultado.rows[0])
+
+    } catch (error) {
+        console.error("Error en la consulta:", error);
+        throw error;
+    }
+}
