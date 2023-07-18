@@ -13,10 +13,6 @@ import nodemailer from 'nodemailer';
 import { google } from 'googleapis';
 
 var x, email_, randomNumber;
-const { json, urlencoded } = pkg;
-const app = express();
-app.use(json());
-app.use(urlencoded({ extended: true }));
 
 const oauth2Client = new google.auth.OAuth2(
     // Client ID
@@ -51,19 +47,8 @@ export const rutaPricipal = async (req, res) => {
     res.json(resultadopeticion)
 };
 
-export const PostRegistro_Suelos = async (req, res) => {
-
 //#region FUNCTIONS
 
-export const postRegistro_Usuario1 = async(req, res) => {
-    try {
-        usuario=[req.body.id_number,req.body.name, req.body.surname, req.body.email, req.body.password];
-        res.redirect('http://127.0.0.1:5500/PAGINAS/Sign-up-2.html');
-    } catch (error) {
-        console.error("Error en la consulta:", error);
-        throw error;
-    }
-};
 
 export const postRegistro_Usuario1 = async (req, res) => {
     try {
@@ -278,12 +263,6 @@ export const postRegistro_Usuario1 = async (req, res) => {
         throw error;
     }
 };
-
-export const postRegistro_Usuario2 = async (req, res) => {
-    const resultado = await pool.query(`
-    INSERT INTO clientes (
-        idcli, names_, surnamecli, emailcli, passwordcli)        
-    VALUES ('${x[0]}', '${x[1]}', '${x[2]}', '${x[3]}', '${x[4]}')`
 export const postRegistro_Usuario2 = async(req, res) => {
 const resultado = await pool.query(`
     INSERT INTO clientes (
