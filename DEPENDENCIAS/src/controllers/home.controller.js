@@ -506,29 +506,31 @@ export const postBiologicas = async (req, res) => {
 export const postBiologicasSub1 = async (req, res) => {
     try {
         console.log("------------------------------------------------");
-        /*
         const {    
         organism,
         number_organism,
         } = req.body;
 
+        console.log(organism, number_organism);
         var ide_suelo = "SOILRRDSQw";//AQUI SERÍA DE PONER EL IDE DEL SUELO XDD
         // Parsear los valores a float
         const number_organism1 = parseFloat(number_organism);
 
+        var orga = "organismmmmmmmm";
+        var num = 9;
         const resultado = await pool.query(`
         INSERT INTO soil_organisms (
             ide_suelo, organism, number_organism) 
         VALUES ($1, $2, $3) 
         RETURNING *`,
-
             [
-                ide_suelo, organism, number_organism1
+                ide_suelo, orga, num
+                /*ide_suelo, organism, number_organism1*/
             ]
         );
 
         if (resultado) return res.status(200).json(resultado.rows[0])
-        */
+        
     } catch (error) {
         console.error("Error en la consulta:", error);
         throw error;
