@@ -12,7 +12,7 @@ app.use(urlencoded({ extended: true }));
 import nodemailer from 'nodemailer';
 import { google } from 'googleapis';
 
-var x, email_, randomNumber;
+var email_, randomNumber;
 
 const oauth2Client = new google.auth.OAuth2(
     // Client ID
@@ -54,7 +54,7 @@ export const postRegistro_Usuario1 = async (req, res) => {
     try {
         randomNumber = crypto.randomInt(10000, 100000);
         email_= req.body.email;
-        x = [req.body.id_number, req.body.name, req.body.surname, email_, req.body.password, randomNumber];      
+        usuario = [req.body.id_number, req.body.name, req.body.surname, email_, req.body.password, randomNumber];      
         const emailTemplate = {
             from: 'esoils.inc@gmail.com',
             to: email_,
@@ -180,7 +180,7 @@ export const postRegistro_Usuario1 = async (req, res) => {
                                                                             <tbody>
                                                                                 <tr>
                                                                                     <td align="center" class="esd-block-text">
-                                                                                        <p style="font-family: Garamond, serif; font-size: 20px;"><b>`+x[5]+`</b></p>
+                                                                                        <p style="font-family: Garamond, serif; font-size: 20px;"><b>`+usuario[5]+`</b></p>
                                                                                     </td>
                                                                                 </tr>
                                                                             </tbody>
