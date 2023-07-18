@@ -1,7 +1,6 @@
 import { Router } from "express";
 const router = Router();
 
-
 import { rutaPricipal, postFisicas, PostRegistro_Suelos, postQuimicas, postClasification, postRegistro_Usuario2, postRegistro_Usuario1,
     postBiologicas,postBiologicasSub1, postBiologicas2, postIdUser } from "../controllers/home.controller.js";
 router.get('/',rutaPricipal);

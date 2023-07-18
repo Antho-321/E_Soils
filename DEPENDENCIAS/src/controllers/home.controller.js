@@ -2,14 +2,18 @@ import { pool } from '../db.js';
 import pkg from 'body-parser';
 import express from 'express';
 import crypto from 'crypto';
+import nodemailer from 'nodemailer';
+import { google } from 'googleapis';
+import path from 'path';
+import { fileURLToPath } from 'url'; // Importa el método fileURLToPath
 var ide_suelo;
 const { json, urlencoded } = pkg;
 const app = express();
 app.use(json());
 app.use(urlencoded({ extended: true }));
 
-import nodemailer from 'nodemailer';
-import { google } from 'googleapis';
+// Obtiene la ruta absoluta del módulo actual
+const __dirname = fileURLToPath(import.meta.url);
 
 var usuario, email_, randomNumber;
 
@@ -42,8 +46,7 @@ const transporter = nodemailer.createTransport({
 });
 
 export const rutaPricipal = async (req, res) => {
-    const resultadopeticion = await pool.query("SELECT * FROM clientes");
-    res.json(resultadopeticion)
+    res.redirect('http://127.0.0.1:5500/PAGINAS/Index.html');
 };
 
 //#region FUNCTIONS
@@ -662,8 +665,11 @@ export const postIdUser = async (req, res) => {
             ]
         );
         const id_user = resultado.rows[0].verificar;
+        req.session.id_user = id_user;
+
         if (id_user != null) {
             //redireccionar a indexhtml
+            res.redirect('http://127.0.0.1:5500/PAGINAS/Index.html');
         } else {
             //regresa al login
         }
@@ -672,7 +678,6 @@ export const postIdUser = async (req, res) => {
         throw error;
     }
 }
-
 
 
 /////////////////////////////////////////////////////
