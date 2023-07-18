@@ -2,6 +2,7 @@ import {pool} from '../db.js';
 import pkg from 'body-parser';
 import express from 'express';
 var usuario;
+var ide_suelo;
 const { json, urlencoded } = pkg;
 const app = express();
 app.use(json());
@@ -14,14 +15,11 @@ export const rutaPricipal = async(req,res) => {
 
 
 //#region FUNCTIONS
-export const PostRegistro_Suelos = async(req, res) => {
-
-};
 
 export const postRegistro_Usuario1 = async(req, res) => {
     try {
         usuario=[req.body.id_number,req.body.name, req.body.surname, req.body.email, req.body.password];
-res.redirect('http://127.0.0.1:5500/PAGINAS/Sign-up-2.html');
+        res.redirect('http://127.0.0.1:5500/PAGINAS/Sign-up-2.html');
     } catch (error) {
         console.error("Error en la consulta:", error);
         throw error;
@@ -38,6 +36,60 @@ const resultado = await pool.query(`
     if (resultado) return res.status(200).json(resultado.rows[0])
 }
 
+
+
+// Manejo de la solicitud POST para obtener los datos del formulario Suelos
+export const exportIde_suelo = async(req, res, next) => {
+    try{
+        suelo = generateUniqueID();
+        res.redirect("http://127.0.0.1:5500/PAGINAS/Fisicas-1.html");
+        res.redirect("http://127.0.0.1:5500/PAGINAS/Biologicas-1.html");
+        res.redirect("http://127.0.0.1:5500/PAGINAS/Quimicas-1.html");
+        res.redirect("http://127.0.0.1:5500/PAGINAS/FinalizacionDelRegistro.html");
+        
+    }
+    catch{
+        console.error("Error en la consulta:", error);
+        throw error;
+    }
+}
+export const PostRegistro_Suelos = async(req, res) => {
+    try {
+        const {
+            codprov, codcan, soil_picture
+        } = req.body;
+
+        var ide_suelo = generateUniqueID();
+        
+        //var idcli = usuario[0];
+        var idcli = "0401751227";
+
+        console.log("El tipo es   ",soil_picture);
+
+        var codprov1  = parseFloat(codprov);
+        var codcan1 = parseFloat(codcan);
+        
+        //console.log(soil_picture);
+
+        const resultado = await pool.query(`
+        INSERT INTO registros_suelos (
+            ide_suelo, idcli, codprov, codcan, soil_picture, active) 
+            
+        VALUES ($1, $2, $3, $4, $5, $6) 
+        RETURNING *`,
+            [
+                ide_suelo, idcli, codprov1, codcan1, soil_picture, true
+            ]
+        );
+
+    if (resultado) return res.status(200).json(resultado.rows[0])
+
+    } catch (error) {
+        console.error("Error en la consulta:", error);
+        throw error;
+    }
+
+};
 
 // Manejo de la solicitud POST para obtener los datos del formulario Propiedades Físicas
 export const postFisicas = async (req, res) =>
@@ -285,6 +337,25 @@ export const postEditProfile = async (req, res) =>
         console.error("Error en la consulta:", error);
         throw error;
     }
+}
+
+
+/*FUNCIÓN PARA GENERAR UN NUEVO ID QUE NO SE REPITA NUNCA LA DEJAN QUIETA QUE ES PARA EL SUELO*/
+function generateUniqueID() {
+  // Caracteres permitidos para la generación del ID
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+  // Longitud deseada del ID
+  const idLength = 6;
+
+  let result = '';
+  for (let i = 0; i < idLength; i++) {
+    // Generar un índice aleatorio para obtener un carácter de la cadena de caracteres
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    result += characters.charAt(randomIndex);
+  }
+
+  return "SOIL"+result;
 }
 //#endregion
 ////////////////////////////////////////////////
