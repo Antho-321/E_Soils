@@ -1,11 +1,12 @@
 import { pool } from '../db.js';
 import pkg from 'body-parser';
 import express from 'express';
+import crypto from 'crypto';
 
 import nodemailer from 'nodemailer';
 import { google } from 'googleapis';
 
-var x, email_;
+var x, email_, randomNumber;
 const { json, urlencoded } = pkg;
 const app = express();
 app.use(json());
@@ -50,13 +51,14 @@ export const PostRegistro_Suelos = async (req, res) => {
 
 export const postRegistro_Usuario1 = async (req, res) => {
     try {
+        randomNumber = crypto.randomInt(10000, 100000);
         email_= req.body.email;
-        x = [req.body.id_number, req.body.name, req.body.surname, email_, req.body.password];      
+        x = [req.body.id_number, req.body.name, req.body.surname, email_, req.body.password, randomNumber];      
         const emailTemplate = {
             from: 'esoils.inc@gmail.com',
             to: email_,
-            subject: 'Hello from Nodemailer',
-            text: 'This is a test email sent by Nodemailer.',
+            subject: 'Código de verificación',
+            body: 'Verificación de dispositivo',
             html: `
             <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
@@ -111,7 +113,7 @@ export const postRegistro_Usuario1 = async (req, res) => {
                                                                             <tbody>
                                                                                 <tr>
                                                                                     <td align="left" class="esd-block-text">
-                                                                                        <h1 style="font-family: Garamond, serif; text-align: center;"><b>Código de verificación de registro en ESoils</b></h1>
+                                                                                        <h1 style="font-family: Garamond, serif; text-align: center; color: black;"><b>Código de verificación de registro en E Soils</b></h1>
                                                                                     </td>
                                                                                 </tr>
                                                                             </tbody>
@@ -144,7 +146,7 @@ export const postRegistro_Usuario1 = async (req, res) => {
                                                                             <tbody>
                                                                                 <tr>
                                                                                     <td align="left" class="esd-block-text">
-                                                                                        <p style="font-family: Garamond, serif; font-size: 20px;">Estimado usuario:<br>Ha solicitado registrarse en nuestro sitio web ESoils utilizando su dirección de correo electrónico. Para completar su registro, introduzca el siguiente código de verificación en nuestro sitio web:</p>
+                                                                                        <p style="font-family: Garamond, serif; font-size: 20px;">Estimado usuario:<br>Ha solicitado registrarse en nuestro sitio web E Soils utilizando su dirección de correo electrónico. Para completar su registro, introduzca el siguiente código de verificación en nuestro sitio web:</p>
                                                                                     </td>
                                                                                 </tr>
                                                                             </tbody>
@@ -177,7 +179,7 @@ export const postRegistro_Usuario1 = async (req, res) => {
                                                                             <tbody>
                                                                                 <tr>
                                                                                     <td align="center" class="esd-block-text">
-                                                                                        <p style="font-family: Garamond, serif; font-size: 20px;"><b>56158</b></p>
+                                                                                        <p style="font-family: Garamond, serif; font-size: 20px;"><b>`+x[5]+`</b></p>
                                                                                     </td>
                                                                                 </tr>
                                                                             </tbody>
@@ -198,7 +200,7 @@ export const postRegistro_Usuario1 = async (req, res) => {
                                                                             <tbody>
                                                                                 <tr>
                                                                                     <td align="left" class="esd-block-text">
-                                                                                        <p style="font-family: Garamond, serif; font-size: 20px;">Si no ha solicitado este código, ignore este correo electrónico. No comparta este código con nadie. Ha recibido este correo electrónico porque introdujo esta dirección de correo electrónico en el formulario de registro de nuestro sitio web. Si cree que se trata de un error, póngase en contacto con nosotros para comunicárnoslo. Gracias por elegir ESoils, la mejor plataforma para la gestión de datos de&nbsp;suelos.<br><br>Atentamente,</p>
+                                                                                        <p style="font-family: Garamond, serif; font-size: 20px;">Si no ha solicitado este código, ignore este correo electrónico. No comparta este código con nadie. Ha recibido este correo electrónico porque introdujo esta dirección de correo electrónico en el formulario de registro de nuestro sitio web. Si cree que se trata de un error, póngase en contacto con nosotros para comunicárnoslo. Gracias por elegir E Soils, la mejor plataforma para la gestión de datos de&nbsp;suelos.<br><br>Atentamente,</p>
                                                                                     </td>
                                                                                 </tr>
                                                                             </tbody>
@@ -251,7 +253,7 @@ export const postRegistro_Usuario1 = async (req, res) => {
                 console.error(err);
             } else {
                 console.log('Email sent: ' + info.response);
-                res.redirect('http://127.0.0.1:5500/PAGINAS/Sign-up-2.html');
+                res.redirect('http://127.0.0.1:5500/PAGINAS/Sign-up-2.html?x='+x);
             }
         });
         
@@ -390,5 +392,4 @@ export const postQuimicas = async (req, res) => {
         throw error;
     }
 }
-
 //#endregion
