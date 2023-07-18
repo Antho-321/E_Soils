@@ -3,12 +3,14 @@
 #idbody{
 	background: #E8EAEE;
 }
-
-
 .content{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+}
+
+.separador{
+	padding-bottom: 110px;
 }
 
 img{

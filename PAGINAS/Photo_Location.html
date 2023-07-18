@@ -41,13 +41,13 @@
 	</header>
 	<section class="Data">
 		<h1 class="Titulo_propiedades font_preview_soil">Preview of soil</h1>
-		<form action="#" method="post">
+		<form action="http://localhost:3000/PostRegistro_Suelos" method="post">
 			<div class="Steps steps_preview_soil">
 				<ul class="Tipo tipo_preview_soil">
 					<li id="cont_preview_soil">
 						<img src="../IMAGENES/Example_Soil.png" width="240" alt="" id="prev_img" />
 						<!--<input type="file" id="sel_img_prev_soil" name="myfile">-->
-						<input type="file" id="files" class="hidden" />
+						<input type="file" name="soil_picture" id="files" class="hidden" accept="image/*"/>
 						<label id="sel_img_prev_soil" for="files">Select image</label>
 					</li>
 					<li><strong class="font_preview_soil">Location</strong></li>
@@ -63,14 +63,17 @@
 				</ul>
 
 				<ul class="Values">
-					<li><input name="canton_code" type="number" class="valores"></li>
-					<li><input name="province_code" type="number" class="valores"></li>
+					<li><input name="codcan" type="number" class="valores"></li>
+					<li><input name="codprov" type="number" class="valores"></li>
 				</ul>
 
 			</div>
+
 			<div class="Botones_sumbit">
-				<button class="submit">← Previus</button>
-				<button type="submit" class="submit">Next →</button>
+				<a href="../PAGINAS/Opciones_mis_registros.html" class="submit">← Previus</a>
+				<!--button class="submit">← Previus</!--button-->
+				<button href="../PAGINAS/Fisicas-1.html" type="submit" class="submit">Next →<button>
+				
 			</div>
 		</form>
 	</section>

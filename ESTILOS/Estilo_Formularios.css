@@ -227,3 +227,8 @@ th:nth-child(1) {
 .sel_bio{
 	width: 300px;
 }
+
+a{
+	text-decoration: none;
+	text-align: center;
+}
