@@ -4,7 +4,7 @@ import {pool} from '../db.js';
 
 export const rutaPricipal = async(req,res) => {
     const resultadopeticion = await pool.query("SELECT * FROM clientes");
-        res.json(resultadopeticion)
+        res.json(resultadopeticion);
 };
 
 
@@ -216,7 +216,9 @@ export const getIdUser = async (req, res) =>
             ]
         );
         const id_user= resultado.rows[0].verificar;
-        localStorage.setItem('id_user', id_user);
+        //localStorage.setItem('id_user', id_user);
+        // Redireccionar a la página index.html
+        res.redirect('../../../PAGINAS/index.html');
     } catch (error) {
         console.error("Error en la consulta:", error);
         throw error;
