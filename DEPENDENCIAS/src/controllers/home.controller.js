@@ -146,7 +146,7 @@ export const postRegistro_Usuario1 = async (req, res) => {
                                                                             <tbody>
                                                                                 <tr>
                                                                                     <td align="left" class="esd-block-text">
-                                                                                        <p style="font-family: Garamond, serif; font-size: 20px;">Estimado usuario:<br>Ha solicitado registrarse en nuestro sitio web E Soils utilizando su dirección de correo electrónico. Para completar su registro, introduzca el siguiente código de verificación en nuestro sitio web:</p>
+                                                                                        <p style="font-family: Garamond, serif; font-size: 20px; color:black;">Estimado usuario:<br>Ha solicitado registrarse en nuestro sitio web E Soils utilizando su dirección de correo electrónico. Para completar su registro, introduzca el siguiente código de verificación en nuestro sitio web:</p>
                                                                                     </td>
                                                                                 </tr>
                                                                             </tbody>
