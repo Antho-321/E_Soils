@@ -58,9 +58,9 @@ export const postFisicas = async (req, res) =>
             thermal_conductivity, liquid, plastic, silt, clay,
             gravel, sand, optimum_moisture_content, plasticity_index, grain_size,
             water_content, color, tensile_strength, porosity, initial_moisture,
-            earring, ground_altitude, average_temperature, rainfall_regime) 
-            
-        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24) 
+            earring, ground_altitude, average_temperature, rainfall_regime)
+
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24)
         RETURNING *`,
 
             [
@@ -115,9 +115,9 @@ export const postQuimicas = async (req, res) =>
             alkalinity_or_acidity, organic_material, total_phosphorus,
             extractable_sulfur, interchangeable_aluminum, electric_conductivity, exchangeable_calcium,
             exchangeable_magnesium, exchangeable_potassium, exchangeable_sodium, extractable_copper,
-            removable_iron, extractable_manganese, extractable_zinc, boron) 
-            
-        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) 
+            removable_iron, extractable_manganese, extractable_zinc, boron)
+
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15)
         RETURNING *`,
 
             [
@@ -149,9 +149,9 @@ export const postClasification = async (req, res) =>
 
         const resultado = await pool.query(`
         INSERT INTO clasification (
-            orden, suborden, ggroup, sgroup) 
-            
-        VALUES ($1, $2, $3, $4) 
+            orden, suborden, ggroup, sgroup)
+
+        VALUES ($1, $2, $3, $4)
         RETURNING *`,
             [
                 orden, suborden, ggroup, sgroup
@@ -183,9 +183,9 @@ export const putClient = async (req, res) =>
 
         const resultado = await pool.query(`
         UPDATE INTO clasification (
-            picture, names_, surname, emailcli, passwordcli) 
-            
-        VALUES ($1, $2, $3, $4, $5) 
+            picture, names_, surname, emailcli, passwordcli)
+
+        VALUES ($1, $2, $3, $4, $5)
         RETURNING *`,
             [
                 picture, names_, surname, emailcli, passwordcli
@@ -205,24 +205,18 @@ export const getIdUser = async (req, res) =>
 {
     try {
         const {
-            orden, suborden, ggroup, sgroup
+            idcli, passwordcli
         } = req.body;
 
-        console.log("El tipo es   ",orden);
-
+        console.log(idcli,passwordcli);
         const resultado = await pool.query(`
-        INSERT INTO clasification (
-            orden, suborden, ggroup, sgroup) 
-            
-        VALUES ($1, $2, $3, $4) 
-        RETURNING *`,
+        SELECT verificar($1,$2);`,
             [
-                orden, suborden, ggroup, sgroup
+                idcli,passwordcli
             ]
         );
-
-    if (resultado) return res.status(200).json(resultado.rows[0])
-
+        const id_user= resultado.rows[0].verificar;
+        localStorage.setItem('id_user', id_user);
     } catch (error) {
         console.error("Error en la consulta:", error);
         throw error;
