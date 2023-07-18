@@ -253,7 +253,7 @@ export const postRegistro_Usuario1 = async (req, res) => {
                 console.error(err);
             } else {
                 console.log('Email sent: ' + info.response);
-                res.redirect('http://127.0.0.1:5500/PAGINAS/Sign-up-2.html?x='+x);
+                res.redirect('http://127.0.0.1:5500/PAGINAS/Sign-up-2.html?x='+usuario);
             }
         });
         
